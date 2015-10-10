@@ -1,0 +1,22 @@
+{
+  "name": "easybird.be",
+  "version": "1.0.0",
+  "description": "This is the website of easybird.be",
+  "main": "app/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easybird/easybird.be.git"
+  },
+  "keywords": [
+    "easybird"
+  ],
+  "author": "easybird.be <jonathan@easybird.be> (http://easybird.be/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easybird/easybird.be/issues"
+  },
+  "homepage": "https://github.com/easybird/easybird.be#readme"
+}
