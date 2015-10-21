@@ -1,0 +1,107 @@
+var english =
+{
+"BANNER_TITLE":
+"Always a pleasure creating your product",
+
+"SOFTWARE_DEV_TITLE":"Innovative software development",
+
+"SOFTWARE_DEV_TEXT":
+"We help companies build great products by using the latest proven technologies available. " +
+"Are you having a great idea and need some help to implement it? Are you looking for software expertise? Searching for a solution to a complex problem? Contact us, most probably we can help.",
+
+"FILM_TITLE": "Aerial filmography",
+
+"FILM_TEXT_1":
+"Recently, we've started filming events from in the air. Need someone to film your great event, your sport activities, your wedding? Contact us, we'd love to film and make a compilation video. The sky is really the limit.",
+
+"FILM_TEXT_2":"You can have a sneakpeak at our ",
+
+"PHOTO_TITLE":"Photography",
+
+"PHOTO_TEXT":
+"You like the photos on this website? Need some photos for a magazine, product placement or just need some beautiful images that show a nice athmosphere? Contact us, maybe we can help.",
+
+"BANNER_MIDDLE":"We'd like to help and make your life more beautiful",
+
+"CONTACT_TITLE":"Contact us",
+
+"WHO_TITLE": "Who's us?",
+
+"WHO_TEXT_1": "He likes coding, simplifying things, flying with quadcopters, aerial filming and making movies.",
+
+"WHO_TEXT_2": "She like photos, decoration and making things look more beautiful. Think we can help you out with something?",
+
+"WHO_TEXT_3": "Contact us, and we'll see what we can do: ",
+
+"BANNER_END": "A modern company that likes to make complex things look easy",
+
+"BIO_TITLE":"Company Bio",
+
+"BIO_TEXT_1":
+"We are a young start-up , doing what we love.",
+
+
+"BIO_TEXT_2":
+"Currently situated in Ghent - Belgium.",
+
+}
+
+var dutch =
+{
+"BANNER_TITLE":
+"\"Always a pleasure creating your product\"",
+
+"SOFTWARE_DEV_TITLE":"Hippe en goede software",
+
+"SOFTWARE_DEV_TEXT":
+"Wij helpen bedrijven bij het bouwen van innovatieve producten. " +
+"Hiervoor gebruiken we telkens de laatste bewezen technologieën. " +
+"Zit je met een fantastisch idee en heb je hulp nodig om het te realiseren? " +
+"Ben je op zoek naar software expertise? Zoek je een oplossing voor een complex probleem? " +
+"Contacteer ons, hoogstwaarschijnlijk kunnen wij jou helpen.",
+
+"FILM_TITLE": "Aerial filmography",
+
+"FILM_TEXT_1":
+"Wij filmen events vanuit de lucht. " +
+"Heb je iemand nodig om jouw mooi event goed in beeld te brengen? " +
+"Doe je een uitdagende sport en wil je daar een prachtig filmpje van? " +
+"Trouw je en wil je een sfeervolle film vanuit de lucht? " +
+"Contacteer ons, wij geven je een compilatie filmpje die jouw moment onvergetelijk maakt.",
+
+"FILM_TEXT_2":"Neem alvast een kijkje op ons ",
+
+"PHOTO_TITLE":"Fotografie",
+
+"PHOTO_TEXT":
+"Hou je van de foto's op deze website? " +
+"Heb je foto's nodig voor in een magazine, doe je aan 'product placement' of heb je gewoon foto's nodig die een leuke en unieke sfeer weergeven? " +
+"Contacteer ons, misschien kunnen we helpen.",
+
+"BANNER_MIDDLE":"\"We'd like to help and make your life more beautiful\"",
+
+"CONTACT_TITLE":"Contacteer ons",
+
+"WHO_TITLE": "Wie zijn wij?",
+
+"WHO_TEXT_1": "Hij houdt van moderne technologieën, nieuwe dingen maken, vliegen met drones, filmen en fimpjes maken.",
+
+"WHO_TEXT_2": "Zij houdt van foto's, decoratie en simpelweg dingen mooier maken. Denk je dat wij iets voor jou kunnen betekenen?",
+
+"WHO_TEXT_3": "Contacteer ons, en we zien wat we voor jou kunnen doen: ",
+
+"BANNER_END": "\"A modern company that likes to make complex things look easy\"",
+
+"BIO_TITLE":"Bedrijfsgegevens",
+
+"BIO_TEXT_1":
+"We zijn een jonge start-up die doet wat ze graag doet.",
+
+
+"BIO_TEXT_2":"Momenteel zijn we gesitueerd in Gent - België",
+
+}
+
+arb.register("translations:en",english);
+arb.register("translations:nl",dutch);
+arb.register("translations:nl-be",dutch);
