@@ -44,6 +44,9 @@ var english =
 "BIO_TEXT_2":
 "Currently situated in Ghent - Belgium.",
 
+"BLOG_TITLE": "Blog",
+        "BLOG_TEXT": "Learn more about what we've been up to lately by checking out our Blog."
+
 }
 
 var dutch =
@@ -99,6 +102,8 @@ var dutch =
 
 
 "BIO_TEXT_2":"Momenteel zijn we gesitueerd in Gent - België",
+"BLOG_TITLE": "Blog",
+"BLOG_TEXT": "Bekijk onze blog om te zien waarmee we de laatste tijd bezig waren."
 
 }
 
