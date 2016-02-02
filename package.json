@@ -2,9 +2,22 @@
   "name": "easybird.be",
   "version": "1.0.0",
   "description": "This is the website of easybird.be",
-  "main": "app/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "forever -w ./bin/www",
+    "start-prod": "NODE_ENV=production node ./bin/www",
+    "test": "NODE_ENV=test ./node_modules/.bin/jasmine-node . "
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "1.14.5",
+    "supertest": "1.1.0"
   },
   "repository": {
     "type": "git",
@@ -13,8 +26,8 @@
   "keywords": [
     "easybird"
   ],
-  "author": "easybird.be <jonathan@easybird.be> (http://easybird.be/)",
   "license": "MIT",
+  "author": "easybird.be <jonathan@easybird.be> (http://easybird.be/)",
   "bugs": {
     "url": "https://github.com/easybird/easybird.be/issues"
   },
