@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var homePage = require('./routes/homePage');
 var redirect = require('./routes/redirect');
+var languageParser = require('./middleware/languageParser');
+var languageFinder = require('./middleware/languageFinder');
 
 var app = express();
 
@@ -27,8 +29,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', homePage);
-app.use('/*', redirect);
+app.use('/', languageParser);
+app.use('/:language(en|nl)', homePage);
+//here the route pages come!
+
+app.use('/:language(en|nl)/:url?', redirect);
+app.use('/*', languageFinder);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
