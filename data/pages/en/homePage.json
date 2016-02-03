@@ -17,5 +17,7 @@
   "BANNER_END": "A modern company that likes to make complex things look easy",
   "BIO_TITLE": "Company Bio",
   "BIO_TEXT_1": "We are a young start-up , doing what we love",
-  "BIO_TEXT_2": "Currently situated in Ghent - Belgium."
+  "BIO_TEXT_2": "Currently situated in Ghent - Belgium.",
+  "BLOG_TITLE": "Blog",
+  "BLOG_TEXT": "Learn more about what we've been up to lately by checking out our blog."
 }

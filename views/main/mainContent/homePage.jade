@@ -1,13 +1,13 @@
 #more-info.container.section.scrollspy
     .section
         .row
-            .col.s12.m4
+            .col.s12.m6.l3
                 .icon-block
                     h2.center.brown-text
                         i.material-icons flash_on
                     h5.center.light-green-text!=content.SOFTWARE_DEV_TITLE
                     p.light!=content.SOFTWARE_DEV_TEXT
-            .col.s12.m4
+            .col.s12.m6.l3
                 .icon-block
                     h2.center.brown-text
                         i.material-icons videocam
@@ -15,12 +15,19 @@
                     p.light!=content.FILM_TEXT_1
                     p.light!=content.FILM_TEXT_2
                         a.brown-text.text-lighten-1(href='https://www.youtube.com/channel/UCZwY2gpiTrw9QBuE4h59G8w', target='_blank')!=content.FILM_TEXT_3
-            .col.s12.m4
+            .col.s12.m6.l3
                 .icon-block
                     h2.center.brown-text
                         i.material-icons picture_in_picture
                     h5.center.light-green-text!=content.PHOTO_TITLE
                     p.light!=content.PHOTO_TEXT
+            .col.s12.m6.l3
+                .icon-block
+                    h2.center.brown-text
+                        i.material-icons comment
+                    h5.center.light-green-text
+                        a.light-green-text(href='/' + site.currentLanguage + '/blog')!=content.BLOG_TITLE
+                    p.light!=content.BLOG_TEXT
 include ../banner/grasleiBanner
 .container
     .section
