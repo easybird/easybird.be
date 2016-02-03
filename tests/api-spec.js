@@ -3,13 +3,14 @@ var request = require("supertest")(app);
 
 describe("Existing API GET methods", function () {
         it("GET '/' does redirect to /nl", function (done) {
-            var reponse = request.get("/").expect(302)
+            var reponse = request.get("/")
+                .expect(302)
                 .expect(function (res) {
                     if (res.redirect === false) {
                         throw new Error("function should redirect")
                     }
-                    if (res.header.location !== "/nl") {
-                        throw new Error("should redirect to /nl")
+                    if (res.header.location !== "/nl/") {
+                        throw new Error("should redirect to /nl but instead was redirected to " + res.header.location)
                     }
                 })
                 .end(done)
@@ -42,8 +43,9 @@ describe("Existing API GET methods", function () {
                         if (res.redirect === false) {
                             throw new Error("function should redirect")
                         }
-                        if (res.header.location !== "/nl") {
-                            throw new Error("should redirect to /")
+                        var redirectUrl = "/nl" + randomString;
+                        if (res.header.location !== redirectUrl) {
+                            throw new Error("should redirect to " + redirectUrl + " but instead was redirected to " + res.header.location)
                         }
                     })
                     .end(done)
