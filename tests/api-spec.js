@@ -9,7 +9,7 @@ describe("Existing API GET methods", function () {
                     if (res.redirect === false) {
                         throw new Error("function should redirect")
                     }
-                    if (res.header.location !== "/nl/") {
+                    if (res.header.location !== "/en/") {
                         throw new Error("should redirect to /nl but instead was redirected to " + res.header.location)
                     }
                 })
@@ -43,7 +43,7 @@ describe("Existing API GET methods", function () {
                         if (res.redirect === false) {
                             throw new Error("function should redirect")
                         }
-                        var redirectUrl = "/nl" + randomString;
+                        var redirectUrl = "/en" + randomString;
                         if (res.header.location !== redirectUrl) {
                             throw new Error("should redirect to " + redirectUrl + " but instead was redirected to " + res.header.location)
                         }
