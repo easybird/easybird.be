@@ -5,7 +5,7 @@ nav.white(role='navigation')
         ul.right
             li
                 a(href='/' + site.currentLanguage + '/blog') Blog
-            li
-                a(href='/en' + site.currentUrl) EN
-            li
-                a(href='/nl' + site.currentUrl) NL
+            each locale in site.locales
+                li
+                    -var localeUpperCase = locale.toUpperCase()
+                    a(href='/' + locale + site.currentUrl)=localeUpperCase
