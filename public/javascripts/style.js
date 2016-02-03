@@ -1,4 +1,12 @@
-// Initialize collapse button
-$(".button-collapse").sideNav();
-// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-//$('.collapsible').collapsible();
+(function($){
+    $(function(){
+
+        $('.button-collapse').sideNav();
+        $('.parallax').parallax();
+
+        $(document).ready(function(){
+            $('.scrollspy').scrollSpy();
+        });
+
+    }); // end of document ready
+})(jQuery); // end of jQuery name space

@@ -2,12 +2,34 @@ var app = require("../app");
 var request = require("supertest")(app);
 
 describe("Existing API GET methods", function () {
-        it("GET '/'", function (done) {
-            var reponse = request.get("/");
+        it("GET '/' does redirect to /nl", function (done) {
+            var reponse = request.get("/").expect(302)
+                .expect(function (res) {
+                    if (res.redirect === false) {
+                        throw new Error("function should redirect")
+                    }
+                    if (res.header.location !== "/nl") {
+                        throw new Error("should redirect to /nl")
+                    }
+                })
+                .end(done)
+        });
+
+        it("GET '/nl'", function (done) {
+            var reponse = request.get("/nl");
 
             verifySuccess(reponse)
                 .expect(function (res) {
-                    containsAllSubstrings(res.text, ['<title>Easybird.be</title>'], errorCallback)
+                    containsAllSubstrings(res.text, ['<title>Easybird.be</title>', 'foto'], errorCallback)
+                }).end(done);
+        });
+
+        it("GET '/en'", function (done) {
+            var reponse = request.get("/en");
+
+            verifySuccess(reponse)
+                .expect(function (res) {
+                    containsAllSubstrings(res.text, ['<title>Easybird.be</title>', 'photos'], errorCallback)
                 }).end(done);
         });
 
@@ -20,7 +42,7 @@ describe("Existing API GET methods", function () {
                         if (res.redirect === false) {
                             throw new Error("function should redirect")
                         }
-                        if (res.header.location !== "/") {
+                        if (res.header.location !== "/nl") {
                             throw new Error("should redirect to /")
                         }
                     })
