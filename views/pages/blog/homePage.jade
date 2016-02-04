@@ -7,22 +7,30 @@ block mainContent
             li
                 div.collapsible-header.active
                     div.row.valign-wrapper
-                        div.col.s4.m2
+                        div.col.s4.m2.offset-m1
                             img.circle.responsive-img.valign(src="/images/logo/easybird.png")
-                        div.col.s8.m8.offset-m2
-                            h5.light-green-text Easybird Technical Blog
-                    div.row
-                        p.center-align.brown-text Hier komt nog een subtitle bijvoorbeeld
+                        div.col.s8.m8.offset-m1
+                            div.row
+                                h5.light-green-text Easybird Blog
+                            div.row
+                                p.brown-text "Blogging about frameworks, technologies, other stuff.."
                 div.collapsible-body
                     p This blog contains technical data
+                    div.divider
+                    div.row: div.col.s12
+                        p: a(href="load-more") Load more...
             li
                 div.collapsible-header
                     div.row.valign-wrapper
-                        div.col.s4.m2
+                        div.col.s4.m2.offset-m1
                             img.circle.responsive-img.valign(src="/images/blog/jonathan.png")
-                        div.col.s8.m8.offset-m2
-                            h5.light-green-text My Personal Blog
-                    div.row
-                        p.center-align.brown-text Hier komt nog een subtitle bijvoorbeeld
+                        div.col.s8.m8.offset-m1
+                            div.row
+                                h5.light-green-text Personal Blog
+                            div.row
+                                p.brown-text "Blogging about thoughts, experiences, personal life"
                 div.collapsible-body
                     p This blog contains personal data
+                    div.divider
+                    div.row: div.col.s12
+                        p: a(href="load-more") Load more...
