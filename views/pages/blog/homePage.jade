@@ -1,3 +1,28 @@
 extends ../../layout
 
 block mainContent
+    div.container
+        div.section
+        div.row: div.col.s12: ul.collapsible.popout(data-collapsible="accordion")
+            li
+                div.collapsible-header.active
+                    div.row.valign-wrapper
+                        div.col.s4.m2
+                            img.circle.responsive-img.valign(src="/images/logo/easybird.png")
+                        div.col.s8.m8.offset-m2
+                            h5.light-green-text Easybird Technical Blog
+                    div.row
+                        p.center-align.brown-text Hier komt nog een subtitle bijvoorbeeld
+                div.collapsible-body
+                    p This blog contains technical data
+            li
+                div.collapsible-header
+                    div.row.valign-wrapper
+                        div.col.s4.m2
+                            img.circle.responsive-img.valign(src="/images/blog/jonathan.png")
+                        div.col.s8.m8.offset-m2
+                            h5.light-green-text My Personal Blog
+                    div.row
+                        p.center-align.brown-text Hier komt nog een subtitle bijvoorbeeld
+                div.collapsible-body
+                    p This blog contains personal data

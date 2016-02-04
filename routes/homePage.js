@@ -4,6 +4,9 @@ var locals = require("../helpers/locals");
 
 /* GET home page. */
 router.get('/', function (req, res) {
+    locals.addSiteLocals(res, {
+        currentUrl: '/'
+    });
     var currentLanguage = locals.findSiteLocals(res).currentLanguage;
     var content = require("../data/pages/" + currentLanguage + "/homePage.json");
     content.footer = require("../data/pages/" + currentLanguage + "/footer.json");
