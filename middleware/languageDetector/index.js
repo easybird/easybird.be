@@ -4,13 +4,14 @@ var config = {
     isConfigured: false,
     locales: ['en'],
     defaultLocale: 'en',
-    getLanguageRoute: function() {
+    getLanguageRoute: function(suffix) {
         var language = "";
         config.locales.forEach(function(locale) {
             language = language + locale + '|'
         });
         language = language.substring(0, language.length-1);
-        return '/:language(' + language + ')';
+
+        return '/:language(' + language + ')' + (suffix || '');
     }
 };
 

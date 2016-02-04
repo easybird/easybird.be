@@ -5,8 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var homePage = require('./routes/homePage');
-var redirect = require('./routes/redirect');
+var routes = require('./routes');
 var languageDetector = require('./middleware/languageDetector');
 
 languageDetector.initialise({
@@ -32,9 +31,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', languageDetector.getParser());
-app.use(languageDetector.config.getLanguageRoute(), homePage);
-
-app.use(languageDetector.config.getLanguageRoute() + '/:url?', redirect);
+app.use(languageDetector.config.getLanguageRoute(), routes.homePage);
+app.use(languageDetector.config.getLanguageRoute('/blog'), routes.blog);
+app.use(languageDetector.config.getLanguageRoute('/:url?'), routes.redirect);
 app.use('/*', languageDetector.getFinder());
 
 // catch 404 and forward to error handler

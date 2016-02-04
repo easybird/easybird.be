@@ -3,7 +3,7 @@ var router = express.Router();
 var locals = require("../../helpers/locals");
 
 function getRouter(config) {
-    return router.use(config.getLanguageRoute() +':url?', function (req, res, next) {
+    return router.use(config.getLanguageRoute(':url?'), function (req, res, next) {
         var language = req.params.language;
         var url = req.params.url || "/";
 
