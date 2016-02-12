@@ -11,7 +11,10 @@ include ./list
 include ./expandArticle
 
 mixin componentParser(article, isSummary)
-    - var articleUrl = "/" + site.currentLanguage + site.currentRoute + "/" + article.route
+    if (isSummary)
+        - var articleUrl = "/" + site.currentLanguage + site.currentRoute + "/" + article.route
+    else
+        - var articleUrl = "/" + site.currentLanguage + site.currentRoute
     each component in article.componentList
         if (component.componentId === 'title')
             +title(article.title, articleUrl)

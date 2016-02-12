@@ -8,6 +8,9 @@
       "cssJs": "/javascripts/style.js",
       "css": "/stylesheets/customMaterialize.css",
       "externalScripts": false
+    },
+    "db": {
+      "url": "mongodb://localhost:27017/easyblog"
     }
   },
   "test": {
@@ -19,6 +22,9 @@
       "cssJs": "/javascripts/style.js",
       "css": "/stylesheets/customMaterialize.css",
       "externalScripts": false
+    },
+    "db": {
+      "url": "mongodb://localhost:27017/easyblog"
     }
   },
   "production": {
@@ -30,6 +36,8 @@
       "cssJs": "/javascripts/style.js",
       "css": "/stylesheets/customMaterialize.css",
       "externalScripts": true
+    },
+    "db": {
     }
   }
 }
