@@ -8,4 +8,4 @@ nav.white(role='navigation')
             each locale in site.locales
                 li
                     -var localeUpperCase = locale.toUpperCase()
-                    a(href='/' + locale + site.currentUrl)=localeUpperCase
+                    a(href='/' + locale + site.currentRoute)=localeUpperCase

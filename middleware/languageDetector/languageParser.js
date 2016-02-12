@@ -9,7 +9,7 @@ function getRouter(config) {
 
         locals.addSiteLocals(res, {
             locales: config.locales,
-            currentUrl: url,
+            currentRoute: url,
             currentLanguage: language
         });
 

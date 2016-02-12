@@ -1,0 +1,11 @@
+include ../html/li
+
+mixin unorderedList(listElements)
+    ul
+        for element in listElements
+            +li(element)
+
+mixin orderedList(listElements)
+    ol
+        for element in listElements
+            +li(element)

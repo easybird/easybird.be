@@ -1,5 +1,8 @@
 extends ../../layout
 
+block append stylesheets
+    link(rel='stylesheet' type='text/css' href="/stylesheets/easyblog/easyblog.css" media='screen,projection')
+
 block mainContent
     div.container
         div.section
@@ -11,12 +14,13 @@ block mainContent
                             img.circle.responsive-img.valign(src="/images/logo/easybird.png")
                         div.col.s8.m8.offset-m1
                             div.row
-                                h5.light-green-text Easybird Blog
+                                h5.light-green-text EasyBlog
                             div.row
                                 p.brown-text "Blogging about frameworks, technologies, other stuff.."
                 div.collapsible-body
-                    p This blog contains technical data
-                    div.divider
+                    div.container
+                        div.section
+                        include ./posts/easyblog/articleList
                     div.row: div.col.s12
                         p: a(href="load-more") Load more...
             li
@@ -26,7 +30,7 @@ block mainContent
                             img.circle.responsive-img.valign(src="/images/blog/jonathan.png")
                         div.col.s8.m8.offset-m1
                             div.row
-                                h5.light-green-text Personal Blog
+                                h5.light-green-text Jonathan's Blog
                             div.row
                                 p.brown-text "Blogging about thoughts, experiences, personal life"
                 div.collapsible-body

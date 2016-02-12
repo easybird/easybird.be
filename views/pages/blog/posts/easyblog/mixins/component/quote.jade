@@ -1,0 +1,9 @@
+include ../html/blockquote
+include ./textParser
+
+mixin quote(text)
+    if (typeof text === 'string' || text instanceof String)
+        +blockquote(text)
+    else
+        +blockquote
+            +textParser(text)

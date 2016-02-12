@@ -1,0 +1,10 @@
+extends ../../layout
+
+block append stylesheets
+    link(rel='stylesheet' type='text/css' href="/stylesheets/easyblog/easyblog.css" media='screen,projection')
+
+block mainContent
+    div.container
+        div.section
+        div.row: div.col.s12
+            include ./posts/easyblog/article

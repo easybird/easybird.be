@@ -1,0 +1,24 @@
+#easyblog ul,
+#easyblog ol{
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+
+#easyblog ol li {
+    list-style-type: upper-roman;
+}
+
+#easyblog ul li {
+    list-style-type: circle;
+}
+
+#easyblog p {
+    padding-left: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#easyblog .tiny {
+    padding-top: 0;
+    font-size: 10px;
+}
