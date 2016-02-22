@@ -55,8 +55,7 @@ describe("Existing API GET methods", function () {
     }
 );
 
-//TODO fix mocking mongodb calls
-xdescribe("The Blog module", function() {
+describe("The Blog module", function() {
     it("GET /blog route gets redirected to en/blog", function() {
         request.get('/blog')
             .expect(302)
