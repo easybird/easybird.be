@@ -1,0 +1,12 @@
+include ../html/a
+include ../html/strong
+
+mixin textParser(text)
+    each textParcel in text
+        if (typeof textParcel === 'string' || text instanceof String)
+            =textParcel
+        else
+            if (textParcel.strong)
+                    +strong(textParcel.strong)
+            if (textParcel.link)
+                    +a(textParcel.link, textParcel.url, textParcel.openInOtherTab, "light-green-text")

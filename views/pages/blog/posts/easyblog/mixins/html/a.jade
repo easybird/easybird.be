@@ -1,0 +1,4 @@
+mixin a(title, url, openInOtherTab, cssClasses)
+    if (openInOtherTab)
+        - var target = "_blank"
+    a.light-green-text(class=cssClasses, href=url target=target)!=title

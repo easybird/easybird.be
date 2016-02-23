@@ -1,0 +1,12 @@
+include ../html/p
+include ./textParser
+
+mixin text(text)
+    if (typeof text === 'string' || text instanceof String)
+        +p(text)
+    else
+        +p
+            +textParser(text)
+
+mixin highlightedText(text)
+    +h5(text, "center-align")

@@ -1,0 +1,8 @@
+include ./mixins/component/componentParser
+
+if content.articleList
+    each article in content.articleList
+        div.card#easyblog
+            div.card-content
+                +componentParser(article, true)
+        div.section
