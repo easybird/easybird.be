@@ -24,7 +24,8 @@
       "externalScripts": false
     },
     "db": {
-      "url": "mongodb://localhost:27017/easyblog"
+      "url": "mongodb://localhost:27017/tests",
+      "isTestable": true
     }
   },
   "production": {

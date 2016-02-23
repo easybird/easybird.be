@@ -55,8 +55,15 @@ describe("Existing API GET methods", function () {
     }
 );
 
-describe("The Blog module", function() {
-    it("GET /blog route gets redirected to en/blog", function() {
+describe("The Blog module", function () {
+    var articles = require('../model/articles/index');
+
+    beforeAll(function() {
+        var dbTestSetup = require("../model/db").dbTestSetup();
+        dbTestSetup.addArticleFixtures();
+    });
+
+    it("GET /blog route gets redirected to en/blog", function () {
         request.get('/blog')
             .expect(302)
             .expect(function (res) {
@@ -68,12 +75,37 @@ describe("The Blog module", function() {
                 }
             })
     });
-    it("GET /en/blog successful", function(done) {
-        var reponse = request.get("/en/blog");
+    it("GET /en/blog successful", function (done) {
+        var response = request.get("/en/blog");
 
-        verifySuccess(reponse)
+        var expectedData = ['<title>Blog - Easybird.be</title>', articles.articleFixture[0].title, articles.articleFixture[0].subTitle];
+        verifySuccess(response)
             .expect(function (res) {
-                containsAllSubstrings(res.text, ['<title>Blog - Easybird.be</title>'], errorCallback)
+                containsAllSubstrings(res.text, expectedData, errorCallback)
+            }).end(done);
+    });
+
+    it("GET specific article gets redirected to en/blog", function () {
+        request.get("/" + articles.articleFixture[0].route)
+            .expect(302)
+            .expect(function (res) {
+                if (!res.redirect) {
+                    throw new Error("function should redirect")
+                }
+                if (res.header.location !== "/en/blog" + articles.articleFixture[0].route) {
+                    throw new Error("should redirect to /en/blog but instead was redirected to " + res.header.location)
+                }
+            })
+    });
+
+    it("GET specific article route", function (done) {
+        var response = request.get("/en/blog/" + articles.articleFixture[0].route);
+
+        var expectedData = ['<title>' + articles.articleFixture[0].title + ' - Blog - Easybird.be</title>', articles.articleFixture[0].title, articles.articleFixture[0].subTitle];
+
+        verifySuccess(response)
+            .expect(function (res) {
+                containsAllSubstrings(res.text, expectedData, errorCallback)
             }).end(done);
     });
 });

@@ -5,6 +5,4 @@ var componentSchema = {
     text: [Schema.Types.Mixed]
 };
 
-module.exports = {
-    componentSchema: componentSchema
-};
+module.exports = componentSchema;

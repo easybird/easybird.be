@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var componentSchema = require("./component.js").componentSchema;
+var componentSchema = require("../components").componentSchema;
 var Schema = mongoose.Schema;
 
 var articleSchema = new Schema({

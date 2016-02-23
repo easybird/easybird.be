@@ -5,6 +5,7 @@ var config = require('../data/config');
 var dbURI = config.getConfig().db.url;
 
 // Create the database connection
+console.log('connecting to database: ' + dbURI);
 mongoose.connect(dbURI);
 
 // CONNECTION EVENTS
@@ -33,5 +34,6 @@ process.on('SIGINT', function() {
 
 // BRING IN SCHEMAS & MODELS
 module.exports = {
-    Article: require('./article')
+    Article: require('./articles').articleSchema,
+    dbTestSetup: require('./dbTestSetup')
 };
