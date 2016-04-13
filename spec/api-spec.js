@@ -1,4 +1,11 @@
+if (!process.env.DB_URI) {
+    console.log("DB_URI not specified in api-spec before app!: ")
+}
 var app = require("../app");
+if (!process.env.DB_URI) {
+    console.log("DB_URI not specified in api-spec after app!: ")
+}
+
 var request = require("supertest")(app);
 
 describe("Existing API GET methods", function () {
