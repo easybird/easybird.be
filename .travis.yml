@@ -1,14 +1,14 @@
 language: node_js
 cache:
   directories:
-  - node_modules
+    - node_modules
 node_js:
-- 4.0.0
-- stable
+  - '4.0.0'
+  - 'stable'
 before_script:
-- npm prune
+  - npm prune
 script:
-- npm test
+  - npm test
 deploy:
   provider: heroku
   api_key:
@@ -16,5 +16,5 @@ deploy:
   app: easybird
   on:
     repo: easybird/easybird.be
-    node: 4.0.0
+    node: '4.0.0'
     branch: develop
