@@ -1,0 +1,20 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+node_js:
+- 4.0.0
+- stable
+before_script:
+- npm prune
+script:
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: JQaj3Q/gFjtCQrMso5GOpRjMsNJgIGMQZQ6kPEi9ZHJPBUTMWrcyNBYkKb1BdxIK88j70Sgw32nlvmlsgv9R5G4s4a9HflDOjpXqED+zD9zlab60+zINyU0oJSXFgxUJcg73peYapx7lhJW4YTAQ3XXsWTPDie6N9hj2OiYzRcdQ3L2JQig5VeBZAbY2Rll4mTUzQQSMMS99rK0hflKz8gtBTPB14RzyBEUjRRxm1P6VilRqeXhlW1ZjIEoILzHbnNikUSfhMNYULf/pdUConi0O2kWPnejcEgRWrLxtBvCliShlu7CwdhnjI380iapjJ/tXOpgQMDlgTaiMnrd9cxd+8gIwZ4CIx6tWzyAOjYX1Plz7WpH9oTLv2yIdJUDmMdrgofj9hRw+A9J7jT0ORTNU4o0d/Mi2L+QTnA1PVUpUmBiKg2WF8F7zxzRx8v3ZTEFsUqsvI4uiRC79dyNjaPzS6zmUU1h3d4JjEHtZ8X0vp2Do+0djVFNjV+BMFyJLPOVrKRTJ2Zv7wOqyichb008LcUQup7S2zo1Ianek0SnZk9I3iKTABr7p6kEOj1+5/bAJzb2ao3M0Lr/WCEdSMtYuLHgg85xHid/05PHe+6o7lrBqtXQO9OmMA9hoFsCtV/TlnWWEr4D9xhbT+MGbj24zW2fd/Dim95YqoLJA2fg=
+  app: easybird
+  on:
+    repo: easybird/easybird.be
+    node: 4.0.0
+    branch: develop
