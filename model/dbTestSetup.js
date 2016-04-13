@@ -1,7 +1,8 @@
 var fixtures = require("node-mongoose-fixtures");
+var staticData = require('../data/config/index');
 
 function prepareDb() {
-    var config = require("../data/config").getConfig();
+    var config = staticData.getConfig();
 
     if (!config.db.isTestable) {
         throw new Error("Don't use this DB for testing! - " + config.db.url)

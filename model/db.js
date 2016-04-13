@@ -5,13 +5,12 @@ var config = require('../data/config');
 var dbURI = process.env.DB_URI || config.getConfig().db.url;
 
 // Create the database connection
-console.log('connecting to database: ' + dbURI);
 mongoose.connect(dbURI);
 
 // CONNECTION EVENTS
 // When successfully connected
 mongoose.connection.on('connected', function () {
-    console.log('Mongoose default connection open to ' + dbURI);
+    console.log('Mongoose default connection open');
 });
 
 // If the connection throws an error
