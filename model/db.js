@@ -2,12 +2,14 @@ var mongoose = require('mongoose');
 var config = require('../data/config/index.js');
 
 var dbURI = process.env.DB_URI || config.getConfig().db.url;
+console.log("check another process env: " + process.env.ANOTHER_PROCESS_ENV);
 var options = {
     server: {socketOptions: {keepAlive: 1, connectTimeoutMS: 30000}},
     replset: {socketOptions: {keepAlive: 1, connectTimeoutMS: 30000}}
 };
 
 function addConnectionEvents(callback) {
+    console.log("add connection events: " + process.env.ANOTHER_PROCESS_ENV);
     var conn = mongoose.connection;
 
     conn.on('connected', function () {
