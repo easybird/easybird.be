@@ -2,9 +2,6 @@ var mongoose = require( 'mongoose' );
 var config = require('../data/config');
 
 // Build the connection string
-if (!process.env.DB_URI) {
-    console.log("DB_URI not specified in db.js! ")
-}
 var dbURI = process.env.DB_URI || config.getConfig().db.url;
 
 // Create the database connection

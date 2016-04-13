@@ -1,12 +1,14 @@
 {
   "name": "easybird.be",
   "version": "1.0.0",
+  "engines": {
+    "node": "4.0.0"
+  },
   "description": "This is the website of easybird.be",
   "scripts": {
     "start": "forever -w ./bin/www",
     "start-debug": "node ./bin/www",
-    "start-prod": "NODE_ENV=production node ./bin/www",
-    "test": "NODE_ENV=test jasmine"
+    "start-prod": "NODE_ENV=production node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
