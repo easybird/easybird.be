@@ -1,38 +1,42 @@
-var mongoose = require( 'mongoose' );
-var config = require('../data/config');
+var mongoose = require('mongoose');
+var config = require('../data/config/index.js');
 
-// Build the connection string
 var dbURI = process.env.DB_URI || config.getConfig().db.url;
+var options = {
+    server: {socketOptions: {keepAlive: 1, connectTimeoutMS: 30000}},
+    replset: {socketOptions: {keepAlive: 1, connectTimeoutMS: 30000}}
+};
 
-// Create the database connection
-mongoose.connect(dbURI);
+function addConnectionEvents(callback) {
+    var conn = mongoose.connection;
 
-// CONNECTION EVENTS
-// When successfully connected
-mongoose.connection.on('connected', function () {
-    console.log('Mongoose default connection open');
-});
-
-// If the connection throws an error
-mongoose.connection.on('error',function (err) {
-    console.log('Mongoose default connection error: ' + err);
-});
-
-// When the connection is disconnected
-mongoose.connection.on('disconnected', function () {
-    console.log('Mongoose default connection disconnected');
-});
-
-// If the Node process ends, close the Mongoose connection
-process.on('SIGINT', function() {
-    mongoose.connection.close(function () {
-        console.log('Mongoose default connection disconnected through app termination');
-        process.exit(0);
+    conn.on('connected', function () {
+        console.log('Mongoose default connection open');
     });
-});
 
-// BRING IN SCHEMAS & MODELS
+    conn.once('open', function () {
+        callback();
+    });
+
+    conn.on('error', function (err) {
+        console.error.bind('Mongoose default connection error: ' + err);
+    });
+
+    conn.on('disconnected', function () {
+        console.log('Mongoose default connection disconnected');
+    });
+
+    process.on('SIGINT', function () {
+        mongoose.connection.close(function () {
+            console.log('Mongoose default connection disconnected through app termination');
+            process.exit(0);
+        });
+    });
+};
+
 module.exports = {
-    Article: require('./articles').articleSchema,
-    dbTestSetup: require('./dbTestSetup')
+    connectToDatabase: function connectToDatabase(callback) {
+        addConnectionEvents(callback);
+        mongoose.connect(dbURI, options);
+    }
 };

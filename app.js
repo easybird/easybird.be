@@ -12,6 +12,7 @@ var locals = require("./helpers/locals");
 languageDetector.initialise({
     locales:['en', 'nl']
 });
+
 var app = express();
 
 // view engine setup

@@ -1,5 +1,4 @@
-var db = require('../model/db');
-var Article = db.Article;
+var Article = require("../model/articles/article-schema.js");
 
 var getArticles = function(callback) {
     Article.find({}, null, { sort: { publicationDate: -1}}, function(err, articles) {

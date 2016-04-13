@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var locals = require("../helpers/locals");
-var ArticleService = require("../services").ArticleService;
+var ArticleService = require("../services/article-service");
 
 /* GET blog home page. */
 router.get('/', function (req, res) {
