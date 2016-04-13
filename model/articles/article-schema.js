@@ -7,6 +7,7 @@ var articleSchema = new Schema({
     title: String,
     subTitle: String,
     date: String,
+    topImageUrl: String,
     componentList: [componentSchema],
     creationDate: Date,
     modificationDate: Date,

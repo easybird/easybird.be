@@ -10,7 +10,7 @@
     "start-debug": "node ./bin/www",
     "start-prod": "NODE_ENV=production node ./bin/www",
     "test": "NODE_ENV=test mocha -w",
-    "test-single": "NODE_ENV=test mocha"
+    "test-single": "NODE_ENV=test istanbul cover -x *.test.js _mocha"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
+    "codecov.io": "0.1.6",
+    "istanbul": "0.4.3",
     "mocha": "2.4.5",
     "supertest": "1.2.0"
   },
