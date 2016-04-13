@@ -39,8 +39,7 @@
       "externalScripts": true
     },
     "db": {
-      "url": "mongodb://localhost:27017/easyblog",
-      "enableAutomaticDeploy": true
+      "url": "mongodb://localhost:27017/easyblog"
     }
   }
 }
