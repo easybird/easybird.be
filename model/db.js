@@ -2,7 +2,7 @@ var mongoose = require( 'mongoose' );
 var config = require('../data/config');
 
 // Build the connection string
-var dbURI = config.getConfig().db.url;
+var dbURI = process.env.DB_URI || config.getConfig().db.url;
 
 // Create the database connection
 console.log('connecting to database: ' + dbURI);
