@@ -12,7 +12,9 @@ var articleSchema = new Schema({
     creationDate: Date,
     modificationDate: Date,
     publicationDate: Date,
-    isDeleted: Boolean
+    isDeleted: {type: Boolean, index: true}
 }, {collection: 'articles'});
+
+articleSchema.index({route: 1, isDeleted: 1});
 
 module.exports = mongoose.model('Article', articleSchema);

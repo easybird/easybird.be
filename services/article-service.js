@@ -1,13 +1,13 @@
 var Article = require("../model/articles/article-schema.js");
 
 var getArticles = function(callback) {
-    Article.find({}, null, { sort: { publicationDate: -1}}, function(err, articles) {
+    Article.find({isDeleted: false}, null, { sort: { publicationDate: -1}}, function(err, articles) {
         callback(err, articles)
     });
 };
 
 var findByRoute = function(route, callback) {
-    Article.find({ 'route': route }, function(err, articles) {
+    Article.find({ route: route, isDeleted: false }, function(err, articles) {
         callback(err, articles[0])
     })
 };
