@@ -1,4 +1,5 @@
 extends ../../layout
+include ./posts/easyblog/mixins/articleList
 
 block append stylesheets
     link(rel='stylesheet' type='text/css' href="/stylesheets/easyblog/easyblog.css" media='screen,projection')
@@ -20,9 +21,9 @@ block mainContent
                 div.collapsible-body
                     div.container
                         div.section
-                        include ./posts/easyblog/articleList
-                    div.row: div.col.s12
-                        p: a(href="load-more") Load more...
+                        +articleList(content.articleList)
+                    //div.row: div.col.s12
+                    //    p: a(href="load-more") Load more...
             li
                 div.collapsible-header
                     div.row.valign-wrapper
@@ -36,5 +37,7 @@ block mainContent
                 div.collapsible-body
                     p This blog contains personal data
                     div.divider
-                    div.row: div.col.s12
-                        p: a(href="load-more") Load more...
+                        div.section
+                        +articleList(content.personalList)
+                    //div.row: div.col.s12
+                    //    p: a(href="load-more") Load more...
