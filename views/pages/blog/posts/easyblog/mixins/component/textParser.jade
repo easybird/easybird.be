@@ -1,5 +1,6 @@
 include ../html/a
 include ../html/strong
+include ../html/newLine
 
 mixin textParser(text)
     each textParcel in text
@@ -10,3 +11,5 @@ mixin textParser(text)
                     +strong(textParcel.strong)
             if (textParcel.link)
                     +a(textParcel.link, textParcel.url, textParcel.openInOtherTab, "light-green-text")
+            if (textParcel.br)
+                    +newLine(textParcel.newLine)
