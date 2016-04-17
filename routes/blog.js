@@ -25,6 +25,7 @@ router.get('/', function (req, res) {
                     title: "Blog - Easybird.be",
                     description: "The blog of an innovative company doing mainly software development"
                 },
+                isBlog: true,
                 content: createArticleListContent(res, articles)
             });
 
@@ -55,6 +56,7 @@ router.get('/:url', function (req, res, next) {
                     title: article.title + " - Blog - Easybird.be",
                     description: createDescription(article)
                 },
+                isBlog: true,
                 content: createArticlePageContent(res, article)
             });
         }

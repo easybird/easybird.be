@@ -3,9 +3,15 @@ nav.white(role='navigation')
         a#logo-container.brand-logo(href='/' + site.currentLanguage)
             img(src='/images/logo/easybird.png')
         ul.right
-            li
-                a(href='/' + site.currentLanguage + '/blog') Blog
-            each locale in site.locales
+            if isBlog
                 li
-                    -var localeUpperCase = locale.toUpperCase()
-                    a(href='/' + locale + site.currentRoute)=localeUpperCase
+                    a(href="/" + site.currentLanguage) Home
+                li
+                    a(href='/' + site.currentLanguage + '/blog') Blog
+            else
+                li
+                    a(href='/' + site.currentLanguage + '/blog') Blog
+                each locale in site.locales
+                    li
+                        -var localeUpperCase = locale.toUpperCase()
+                        a(href='/' + locale + site.currentRoute)=localeUpperCase
