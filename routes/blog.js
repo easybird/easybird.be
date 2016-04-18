@@ -97,6 +97,7 @@ router.get('/:url',
             content.article = article;
             var url = req.baseUrl + req.originalUrl;
             content.share = {
+                image: article.topImageUrl ? req.baseUrl + article.topImageUrl : undefined,
                 facebook: createFacebookUrl(url),
                 twitter: createTwitterUrl(article.title, article.subTitle, url),
                 googlePlus: createGooglePlusUrl(url),
