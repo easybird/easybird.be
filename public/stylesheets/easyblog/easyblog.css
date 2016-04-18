@@ -1,5 +1,5 @@
 #easyblog ul,
-#easyblog ol{
+#easyblog ol {
     padding-left: 2rem;
     padding-bottom: 1rem;
 }
@@ -21,4 +21,59 @@
 #easyblog .tiny {
     padding-top: 0;
     font-size: 10px;
+}
+
+/* ==========================================================================
+   Read Progress
+   ========================================================================== */
+
+#progressbar {
+    background-color: #f3f3f3;
+    width: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    min-height: inherit;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.post-progress-info {
+    position: relative;
+    z-index: 9999;
+    display: block;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 135%;
+    padding-bottom: 4px;
+}
+
+#progressbar-value {
+    position: relative;
+    z-index: 99999;
+    color: #8bc34a !important;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.post-progress {
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    width: 100%;
+    border-left: #8bc34a !important;
+    margin: 0 0 40px 0;
+}
+
+.post-progress:after {
+    background: #f3f3f3;
+    height: 1px;
+    width: 100%;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
