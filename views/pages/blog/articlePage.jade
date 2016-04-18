@@ -2,11 +2,15 @@ extends ../../layout
 
 block append stylesheets
     link(rel='stylesheet' type='text/css' href="/stylesheets/easyblog/easyblog.css" media='screen,projection')
-
 block mainContent
-    div.container
         div.section
-        div.row: div.col.s12
-            include ./posts/easyblog/article
-        div.row: div.col.s12
-            include ../../external/disqus/disqus
+        div.row
+            div.col.s12.m8.offset-m2
+                include ./posts/easyblog/article
+                div.hide-on-med-and-up
+                    include ../../external/share/social-media-links
+                include ../../external/disqus/disqus
+            div.col.m2.hide-on-small-and-down
+                div.toc-wrapper
+                    include ../../external/share/social-media-links
+

@@ -1,0 +1,20 @@
+include ../../pages/blog/posts/easyblog/mixins/html/a
+
+block append stylesheets
+    link(rel='stylesheet' type='text/css' href=layout.fontAwesomeCss media='screen,projection')
+
+div.row
+    div.col.s12
+        p.light.caption.brown-text Share this post!
+    div.col.s3.m6.l3
+        +a(undefined, content.share.twitter, true, undefined, "window.open(this.href, 'twitter-share', 'width=550,height=235');return false;")
+            i.fa.fa-twitter.fa-2x
+    div.col.s3.m6.l3
+        +a(undefined, content.share.facebook, true, undefined, "window.open(this.href, 'facebook-share','width=580,height=296');return false;")
+            i.fa.fa-facebook-square.fa-2x
+    div.col.s3.m6.l3
+        +a(undefined, content.share.googlePlus, true, undefined, "window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;")
+            i.fa.fa-google-plus-square.fa-2x
+    div.col.s3.m6.l3
+        +a(undefined, content.share.linkedIn, true, undefined, "window.open(this.href, 'linked-in-share','width=580,height=296');return false;")
+            i.fa.fa-linkedin-square.fa-2x

@@ -1,7 +1,8 @@
 nav.white(role='navigation')
     .nav-wrapper.container
-        a#logo-container.brand-logo(href='/' + site.currentLanguage)
-            img(src='/images/logo/easybird.png')
+        div.hide-on-small-only
+            a#logo-container.brand-logo(href='/' + site.currentLanguage)
+                img(src='/images/logo/easybird.png')
         ul.right
             if isBlog
                 li
