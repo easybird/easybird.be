@@ -7,6 +7,7 @@ var articleSchema = new Schema({
     title: String,
     subTitle: String,
     date: String,
+    metaData: Schema.Types.Mixed,
     topImageUrl: String,
     componentList: [componentSchema],
     creationDate: Date,
