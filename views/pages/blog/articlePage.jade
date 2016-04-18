@@ -3,6 +3,10 @@ extends ../../layout
 block append stylesheets
     link(rel='stylesheet' type='text/css' href="/stylesheets/easyblog/easyblog.css" media='screen,projection')
 
+block append meta
+    if content.article && content.article.topImageUrl
+        meta(property="og:image" content=content.share.image)
+
 block mainContent
         div.section
         div.row

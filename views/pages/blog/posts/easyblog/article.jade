@@ -1,9 +1,5 @@
 include ./mixins/component/componentParser
 
-block append meta
-    if content.article && content.article.topImageUrl
-        meta(property="og:image" content=content.share.image)
-
 if content.article
     div.card#easyblog
         div.card-content
