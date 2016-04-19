@@ -1,5 +1,6 @@
 mixin a(title, url, openInOtherTab, cssClasses, onClick)
-    if (openInOtherTab)
-        - var target = "_blank"
+    - var target = "_blank"
+    if (openInOtherTab === false)
+        - target = undefined
     a.light-green-text(class=cssClasses, href=url target=target onClick=onClick)!=title
         block

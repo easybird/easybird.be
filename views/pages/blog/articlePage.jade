@@ -2,6 +2,7 @@ extends ../../layout
 
 block append stylesheets
     link(rel='stylesheet' type='text/css' href="/stylesheets/easyblog/easyblog.css" media='screen,projection')
+    script(type='text/javascript' src="//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js")
 
 block append meta
     if content.article && content.article.topImageUrl

@@ -9,6 +9,7 @@ include ./paragraphSubTitle
 include ./quote
 include ./list
 include ./expandArticle
+include ../html/code
 
 mixin componentParser(article, isSummary)
     if (isSummary)
@@ -40,6 +41,8 @@ mixin componentParser(article, isSummary)
             +unorderedList(component.text)
         if (component.componentId === 'articleImage')
             +articleImage(component.text)
+        if (component.componentId === 'code')
+            +code(component.text['lang'], component.text['code'])
         if (isSummary)
             if (component.componentId === 'expandArticle')
                 +expandArticle(articleUrl)

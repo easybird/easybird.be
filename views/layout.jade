@@ -26,7 +26,8 @@ html
         footer
             block footer
                 include ./footer/index
-        //-Import jQuery before materialize.js
-        script(type='text/javascript' src=layout.jquery)
-        script(type='text/javascript' src=layout.cssFrameworkJs)
-        script(type='text/javascript' src=layout.cssJs)
+        block javascripts
+            //-Import jQuery before materialize.js
+            script(type='text/javascript' src=layout.jquery)
+            script(type='text/javascript' src=layout.cssFrameworkJs)
+            script(type='text/javascript' src=layout.cssJs)
