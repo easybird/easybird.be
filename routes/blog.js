@@ -60,8 +60,7 @@ router.get('/:url',
                         description: createDescription(article)
                     },
                     isBlog: true,
-                    content: createArticlePageContent(res, article),
-                    require: require
+                    content: createArticlePageContent(res, article)
                 });
             }
         }
