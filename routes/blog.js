@@ -27,7 +27,8 @@ router.get('/', function (req, res) {
                     description: "The blog of an innovative company doing mainly software development"
                 },
                 isBlog: true,
-                content: createArticleListContent(res, articles)
+                content: createArticleListContent(res, articles),
+                require: require
             });
 
             function createArticleListContent(res, articles) {
@@ -60,7 +61,8 @@ router.get('/:url',
                         description: createDescription(article)
                     },
                     isBlog: true,
-                    content: createArticlePageContent(res, article)
+                    content: createArticlePageContent(res, article),
+                    require: require
                 });
             }
         }
