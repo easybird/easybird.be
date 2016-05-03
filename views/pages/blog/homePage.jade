@@ -1,5 +1,4 @@
 extends ../../layout
-include ./posts/easyblog/mixins/articleList
 
 block append stylesheets
     link(rel='stylesheet' type='text/css' href="/stylesheets/easyblog/easyblog.css" media='screen,projection')
@@ -19,11 +18,9 @@ block mainContent
                             div.row
                                 p.brown-text "Blogging about frameworks, technologies, other stuff.."
                 div.collapsible-body
-                    div.container
+                    div.container#easyblog
                         div.section
-                        +articleList(content.articleList)
-                    //div.row: div.col.s12
-                    //    p: a(href="load-more") Load more...
+                        div#easybird-articles
             li
                 div.collapsible-header
                     div.row.valign-wrapper
@@ -38,6 +35,10 @@ block mainContent
                     p This blog contains personal data
                     div.divider
                         div.section
-                        +articleList(content.personalList)
-                    //div.row: div.col.s12
-                    //    p: a(href="load-more") Load more...
+                        //TODO fix to make it work with multiple articleList bundles.
+                        div#personal-articles
+block append javascripts
+    script.
+        var articleListProps = !{JSON.stringify(easyblog.articleListProps).replace(/<\//g, "<\\/")};
+        var articleListId = "easybird-articles"
+    script(type = 'text/javascript' src="/easyblog/articleList.bundle.js")

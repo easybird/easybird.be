@@ -10,9 +10,9 @@ block append meta
 
 block mainContent
         div.section
-        div.row
+        div.row#easyblog
             div.col.s12.m8.offset-m2
-                include ./posts/easyblog/article
+                div#article-page
                 div.hide-on-med-and-up
                     include ../../external/share/social-media-links
                 include ../../external/disqus/disqus
@@ -21,3 +21,8 @@ block mainContent
                     include ../../external/progress-bar
                     include ../../external/share/social-media-links
 
+block append javascripts
+    script.
+        var articlePageProps = !{JSON.stringify(easyblog.articlePageProps).replace(/<\//g, "<\\/")};
+        var articlePageId = "article-page";
+    script(type = 'text/javascript' src="/easyblog/articlePage.bundle.js")

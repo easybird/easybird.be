@@ -34,6 +34,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use("/easyblog", express.static(path.join(__dirname, 'node_modules', 'easyblog', 'dist')));
 
 app.use('/', languageDetector.getParser());
 app.use(languageDetector.config.getLanguageRoute(), routes.homePage);

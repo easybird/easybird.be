@@ -3,6 +3,8 @@ var router = express.Router();
 var locals = require("../helpers/locals");
 var ArticleService = require("../services/article-service");
 var baseUrl = require("../middleware/helpers/baseUrl");
+var path = require("path");
+var _ = require("lodash");
 
 /* GET blog home page. */
 router.get('/', function (req, res) {
@@ -17,7 +19,17 @@ router.get('/', function (req, res) {
             // TODO what to do when db down?
             doRender(null)
         } else {
-            doRender(articles);
+            enrichArticleList(articles, function() {
+                doRender(articles);
+            });
+        }
+
+        function enrichArticleList(articles, callback) {
+            _.forEach(articles, function (article) {
+                var siteLocals = locals.findSiteLocals(res);
+                article.articleUrl = path.resolve("/", siteLocals.currentLanguage, siteLocals.currentRoute, article.route);
+            });
+            callback();
         }
 
         function doRender(articles) {
@@ -28,6 +40,11 @@ router.get('/', function (req, res) {
                 },
                 isBlog: true,
                 content: createArticleListContent(res, articles),
+                easyblog: {
+                    articleListProps: {
+                        articles: articles
+                    }
+                },
                 require: require
             });
 
@@ -55,6 +72,8 @@ router.get('/:url',
             if (err || !article) {
                 next();
             } else {
+                var articleUrl = "/" + locals.findSiteLocals(res).currentLanguage + locals.findSiteLocals(res).currentRoute;
+                article.articleUrl = articleUrl;
                 res.render('pages/blog/articlePage', {
                     metaData: {
                         title: article.title + " - Blog - Easybird.be",
@@ -62,6 +81,11 @@ router.get('/:url',
                     },
                     isBlog: true,
                     content: createArticlePageContent(res, article),
+                    easyblog: {
+                        articlePageProps: {
+                            article: article
+                        }
+                    },
                     require: require
                 });
             }
@@ -82,7 +106,7 @@ router.get('/:url',
 
         function createLinkedInUrl(title, subTitle, url) {
             var text = title + " - " + subTitle;
-            return "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + encodeURIComponent(text)+ "&summary=&source=";
+            return "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + encodeURIComponent(text) + "&summary=&source=";
         }
 
         function createFacebookUrl(url) {
