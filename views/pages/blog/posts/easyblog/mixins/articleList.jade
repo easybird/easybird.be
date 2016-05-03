@@ -1,9 +1,0 @@
-include component/componentParser
-
-mixin articleList(articles)
-    if articles
-        each article in articles
-            div.card#easyblog
-                div.card-content
-                    +componentParser(article, true)
-            div.section

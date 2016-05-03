@@ -4,12 +4,14 @@ var Schema = mongoose.Schema;
 
 var articleSchema = new Schema({
     route: String,
+    articleUrl: String,
     title: String,
     subTitle: String,
     date: String,
     metaData: Schema.Types.Mixed,
     topImageUrl: String,
     componentList: [componentSchema],
+    content: Schema.Types.Mixed,
     creationDate: Date,
     modificationDate: Date,
     publicationDate: Date,
