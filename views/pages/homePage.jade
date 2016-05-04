@@ -2,3 +2,10 @@ extends ../layout
 
 block mainContent
     include ../main/mainContent/homePage
+    div#blog-article-app
+        !=react.renderedApp
+
+block append javascripts
+    script.
+        var blogArticleProps = !{JSON.stringify(react.initProps).replace(/<\//g, "<\\/")};
+    script(type = 'text/javascript' src=react.bundle)

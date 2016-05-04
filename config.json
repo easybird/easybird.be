@@ -44,5 +44,20 @@
     "db": {
       "url": "mongodb://localhost:27017/easyblog"
     }
+  },
+  "react": {
+    "appDir": "frontend-app",
+    "buildDir": "public/javascripts/react",
+    "htmlDir": "/javascripts/react/",
+    "components": {
+      "blogOverview": {
+        "entry": "blog-app/overview/blog-overview-app.js",
+        "bundle": "blog-overview.bundle.js"
+      },
+      "blogArticle": {
+        "entry": "blog-app/article/blog-article-app.js",
+        "bundle": "blog-article.bundle.js"
+      }
+    }
   }
 }
