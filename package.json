@@ -9,7 +9,7 @@
     "start": "node ./bin/www",
     "auto-start": "forever -w ./bin/www",
     "start-prod": "NODE_ENV=production node ./bin/www",
-    "check-coverage": "istanbul check-coverage --statements 10 --branches 10 --functions 10 --lines 10",
+    "check-coverage": "istanbul check-coverage --statements 80 --branches 50 --functions 70 --lines 80",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "test": "NODE_ENV=test mocha -w --compilers js:babel-register --recursive",
     "test-single": "NODE_ENV=test istanbul cover -x *.test.js _mocha -- --compilers js:babel-register --recursive"
@@ -42,7 +42,7 @@
   "devDependencies": {
     "chai": "3.5.0",
     "codecov.io": "0.1.6",
-    "istanbul": "0.4.3",
+    "istanbul": "^1.0.0-alpha.2",
     "mocha": "2.4.5",
     "supertest": "1.2.0",
     "webpack": "1.13.0"
