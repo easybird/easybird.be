@@ -1,3 +1,6 @@
+import ReactDOMServer from 'react-dom/server';
+import React from 'react';
+import BlogArticle from '../frontend-app/blog-app/article/blog-article.js';
 var express = require('express');
 var router = express.Router();
 var locals = require("../helpers/locals");
@@ -5,58 +8,7 @@ var ArticleService = require("../services/article-service");
 var baseUrl = require("../middleware/helpers/baseUrl");
 var path = require("path");
 var _ = require("lodash");
-
-/* GET blog home page. */
-router.get('/', function (req, res) {
-    locals.addSiteLocals(res, {
-        currentRoute: '/blog'
-    });
-
-    ArticleService.getArticles(renderHomePage);
-
-    function renderHomePage(err, articles) {
-        if (err || !articles) {
-            // TODO what to do when db down?
-            doRender(null)
-        } else {
-            enrichArticleList(articles, function() {
-                doRender(articles);
-            });
-        }
-
-        function enrichArticleList(articles, callback) {
-            _.forEach(articles, function (article) {
-                var siteLocals = locals.findSiteLocals(res);
-                article.articleUrl = path.resolve("/", siteLocals.currentLanguage, siteLocals.currentRoute, article.route);
-            });
-            callback();
-        }
-
-        function doRender(articles) {
-            res.render('pages/blog/homePage', {
-                metaData: {
-                    title: "Blog - Easybird.be",
-                    description: "The blog of an innovative company doing mainly software development"
-                },
-                isBlog: true,
-                content: createArticleListContent(res, articles),
-                easyblog: {
-                    articleListProps: {
-                        articles: articles
-                    }
-                },
-                require: require
-            });
-
-            function createArticleListContent(res, articles) {
-                var content = getMainContent(res);
-                content.articleList = articles;
-                return content;
-            }
-        }
-    };
-
-});
+var config = require("../config.json");
 
 router.get('/:url',
     baseUrl,
@@ -73,7 +25,12 @@ router.get('/:url',
                 next();
             } else {
                 var articleUrl = "/" + locals.findSiteLocals(res).currentLanguage + locals.findSiteLocals(res).currentRoute;
+
                 article.articleUrl = articleUrl;
+
+                var initProps = {
+                    article: article
+                };
                 res.render('pages/blog/articlePage', {
                     metaData: {
                         title: article.title + " - Blog - Easybird.be",
@@ -81,10 +38,11 @@ router.get('/:url',
                     },
                     isBlog: true,
                     content: createArticlePageContent(res, article),
-                    easyblog: {
-                        articlePageProps: {
-                            article: article
-                        }
+                    react: {
+                        renderedApp: ReactDOMServer.renderToString(
+                            React.createFactory(BlogArticle)(initProps)),
+                        initProps: initProps,
+                        bundle: config.react.htmlDir + config.react.components.blogArticle.bundle
                     },
                     require: require
                 });

@@ -1,145 +1,601 @@
 var articleFixture = [
     {
         "route": "test-route",
-        "title": "This is a test article",
-        "subTitle": "Just a test article",
-        "date": "Jan 18, 2016",
-        "componentList": [
-            {
-                "componentId": "title"
+        "title": "http://www.artikeltitel.com",
+        "subTitle": "En dit is de ondertitel.",
+        "content": {
+            "entityMap": {
+                "0": {
+                    "type": "LINK",
+                    "mutability": "MUTABLE",
+                    "data": {"url": "http://www.artikeltitel.com"}
+                },
+                "1": {
+                    "type": "image",
+                    "mutability": "IMMUTABLE",
+                    "data": {"src": "http://localhost:3000/media/sample.jpg"}
+                },
+                "2": {
+                    "type": "LINK",
+                    "mutability": "MUTABLE",
+                    "data": {"url": "mijioj"}
+                },
+                "3": {
+                    "type": "more-info",
+                    "mutability": "IMMUTABLE",
+                    "data": {"text": "Read more"}
+                },
+                "4": {
+                    "type": "audio",
+                    "mutability": "IMMUTABLE",
+                    "data": {"src": "http://localhost:3000/media/sample.mp3"}
+                },
+                "5": {
+                    "type": "video",
+                    "mutability": "IMMUTABLE",
+                    "data": {"src": "http://localhost:3000/media/sample.mp4"}
+                }
             },
-            {
-                "componentId": "subTitle"
-            },
-            {
-                "componentId": "articleSignature"
-            },
-            {
-                "componentId": "text",
-                "text": "How do ideas start? Out of inspiration, out of frustration?"
-            },
-            {
-                "componentId": "text",
-                "text": "Where do ideas start? In this case…under the shower."
-            },
-            {
-                "componentId": "quote",
-                "text": "What will I do during my period of seclusion from the outside world?"
-            },
-            {
-                "componentId": "text",
-                "text": "Well, I wanted to keep a blog about what I’m doing..but I don’t find a good integratable fluent and dynamic platform which is adapted to todays technology stack. I tried Pencilblue, in my opinion it goes in the right direction. But I’m having troubles with two important features:"
-            },
-            {
-                "componentId": "unorderedList",
-                "text": [
-                    "the wysiwyg editor and the way to add custom css to it",
-                    "the articles overview page: my first impression is that it’s buggy and not very straightforward to customise big time"
-                ]
-            },
-            {
-                "componentId": "text",
-                "text": "Well, I wanted to explore new technologies. I was thinking about Angular 2, ReactJS, the Google Project Tango."
-            },
-            {
-                "componentId": "text",
-                "text": "This morning, January 18th 2016, the shower in Les Deux Alpes, let me realise I can combine the 3 of them."
-            },
-            {
-                "componentId": "expandArticle"
-            },
-            {
-                "componentId": "text",
-                "text": "Let’s start exploring Angular 2, and make a wysiwyg editor with the following features:"
-            },
-            {
-                "componentId": "orderedList",
-                "text": [
-                    "create or use a basic wysiwyg editor which creates basic HTML in Angular 2",
-                    "configure the basic html tags (p, h1, h2, a, img) to contain some css classes by default. For example, when writing plain text (<p> should be adjusted to be <p class=“custom”> when rendering the html)",
-                    "make it possible to add images and videos (start with only the link)"
-                ]
-            },
-            {
-                "componentId": "text",
-                "text": "Let’s start, make it open source and call it EasyBlog! But first things first, let’s go snowboarding for an hour or two!"
-            }
-        ],
-        "creationDate": "2016-01-18T10:50:42.389Z",
-        "modificationDate": "2016-01-18T10:50:42.389Z",
-        "publicationDate": "2016-01-18T10:50:42.389Z",
-        "isDeleted": false
+            "blocks": [
+                {
+                    "key": "ejddc",
+                    "text": "Dit is de artikel titel!",
+                    "type": "header-four",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 24,
+                            "key": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "9c0ih",
+                    "text": "En dit is de ondertitel.",
+                    "type": "header-five",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "46gdb",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "3d87s",
+                    "text": " ",
+                    "type": "atomic",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 1
+                        }
+                    ]
+                },
+                {
+                    "key": "bihqe",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "9tj9d",
+                    "text": "test",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 4,
+                            "style": "ITALIC"
+                        }
+                    ],
+                    "entityRanges": []
+                },
+                {
+                    "key": "ek0v3",
+                    "text": "test",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 4,
+                            "style": "BOLD"
+                        }
+                    ],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 4,
+                            "key": 2
+                        }
+                    ]
+                },
+                {
+                    "key": "4kf6s",
+                    "text": "Hier is het einde van de eerste paragraaf.",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "4m483",
+                    "text": " ",
+                    "type": "atomic",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 3
+                        }
+                    ]
+                },
+                {
+                    "key": "1p00v",
+                    "text": "Hier is het begin van de tweede paragraaf.",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "6d1m8",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "crmoh",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "bssa6",
+                    "text": " ",
+                    "type": "atomic",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 4
+                        }
+                    ]
+                },
+                {
+                    "key": "8v560",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "b1knu",
+                    "text": "code block",
+                    "type": "code-block",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 10,
+                            "style": "BOLD"
+                        }
+                    ],
+                    "entityRanges": []
+                },
+                {
+                    "key": "eae2k",
+                    "text": "//test",
+                    "type": "code-block",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "style": "BOLD"
+                        }
+                    ],
+                    "entityRanges": []
+                },
+                {
+                    "key": "7vojs",
+                    "text": "",
+                    "type": "code-block",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "8ug30",
+                    "text": "",
+                    "type": "code-block",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "dmtm2",
+                    "text": "block quote",
+                    "type": "blockquote",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 11,
+                            "style": "BOLD"
+                        }
+                    ],
+                    "entityRanges": []
+                },
+                {
+                    "key": "4v3tq",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "9kegn",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "ah21e",
+                    "text": " ",
+                    "type": "atomic",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 5
+                        }
+                    ]
+                },
+                {
+                    "key": "7p6jv",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "4q8vc",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                }
+            ]
+        }
     },
     {
-        "route": "another-test-route",
-        "title": "This is a test article",
-        "subTitle": "Just a test article",
-        "date": "Jan 18, 2016",
-        "componentList": [
-            {
-                "componentId": "title"
+        "route": "transform-es6-to-es5-with-babel",
+        "title": "this is the title",
+        "subTitle": "this is the subtitle",
+        "content": {
+            "entityMap": {
+                "0": {
+                    "type": "LINK",
+                    "mutability": "MUTABLE",
+                    "data": {"url": "http://www.artikeltitel.com"}
+                },
+                "1": {
+                    "type": "image",
+                    "mutability": "IMMUTABLE",
+                    "data": {"src": "http://localhost:3000/media/sample.jpg"}
+                },
+                "2": {
+                    "type": "LINK",
+                    "mutability": "MUTABLE",
+                    "data": {"url": "mijioj"}
+                },
+                "3": {
+                    "type": "more-info",
+                    "mutability": "IMMUTABLE",
+                    "data": {"text": "Read more"}
+                },
+                "4": {
+                    "type": "audio",
+                    "mutability": "IMMUTABLE",
+                    "data": {"src": "http://localhost:3000/media/sample.mp3"}
+                },
+                "5": {
+                    "type": "video",
+                    "mutability": "IMMUTABLE",
+                    "data": {"src": "http://localhost:3000/media/sample.mp4"}
+                }
             },
-            {
-                "componentId": "subTitle"
-            },
-            {
-                "componentId": "articleSignature"
-            },
-            {
-                "componentId": "text",
-                "text": "How do ideas start? Out of inspiration, out of frustration?"
-            },
-            {
-                "componentId": "text",
-                "text": "Where do ideas start? In this case…under the shower."
-            },
-            {
-                "componentId": "quote",
-                "text": "What will I do during my period of seclusion from the outside world?"
-            },
-            {
-                "componentId": "text",
-                "text": "Well, I wanted to keep a blog about what I’m doing..but I don’t find a good integratable fluent and dynamic platform which is adapted to todays technology stack. I tried Pencilblue, in my opinion it goes in the right direction. But I’m having troubles with two important features:"
-            },
-            {
-                "componentId": "unorderedList",
-                "text": [
-                    "the wysiwyg editor and the way to add custom css to it",
-                    "the articles overview page: my first impression is that it’s buggy and not very straightforward to customise big time"
-                ]
-            },
-            {
-                "componentId": "text",
-                "text": "Well, I wanted to explore new technologies. I was thinking about Angular 2, ReactJS, the Google Project Tango."
-            },
-            {
-                "componentId": "text",
-                "text": "This morning, January 18th 2016, the shower in Les Deux Alpes, let me realise I can combine the 3 of them."
-            },
-            {
-                "componentId": "expandArticle"
-            },
-            {
-                "componentId": "text",
-                "text": "Let’s start exploring Angular 2, and make a wysiwyg editor with the following features:"
-            },
-            {
-                "componentId": "orderedList",
-                "text": [
-                    "create or use a basic wysiwyg editor which creates basic HTML in Angular 2",
-                    "configure the basic html tags (p, h1, h2, a, img) to contain some css classes by default. For example, when writing plain text (<p> should be adjusted to be <p class=“custom”> when rendering the html)",
-                    "make it possible to add images and videos (start with only the link)"
-                ]
-            },
-            {
-                "componentId": "text",
-                "text": "Let’s start, make it open source and call it EasyBlog! But first things first, let’s go snowboarding for an hour or two!"
-            }
-        ],
-        "creationDate": "2016-01-18T10:50:42.389Z",
-        "modificationDate": "2016-01-18T10:50:42.389Z",
-        "publicationDate": "2016-01-18T10:50:42.389Z",
-        "isDeleted": true
+            "blocks": [
+                {
+                    "key": "ejddc",
+                    "text": "Dit is de artikel titel!",
+                    "type": "header-four",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 24,
+                            "key": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "9c0ih",
+                    "text": "En dit is de ondertitel.",
+                    "type": "header-five",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "46gdb",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "3d87s",
+                    "text": " ",
+                    "type": "atomic",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 1
+                        }
+                    ]
+                },
+                {
+                    "key": "bihqe",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "9tj9d",
+                    "text": "test",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 4,
+                            "style": "ITALIC"
+                        }
+                    ],
+                    "entityRanges": []
+                },
+                {
+                    "key": "ek0v3",
+                    "text": "test",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 4,
+                            "style": "BOLD"
+                        }
+                    ],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 4,
+                            "key": 2
+                        }
+                    ]
+                },
+                {
+                    "key": "4kf6s",
+                    "text": "Hier is het einde van de eerste paragraaf.",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "4m483",
+                    "text": " ",
+                    "type": "atomic",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 3
+                        }
+                    ]
+                },
+                {
+                    "key": "1p00v",
+                    "text": "Hier is het begin van de tweede paragraaf.",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "6d1m8",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "crmoh",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "bssa6",
+                    "text": " ",
+                    "type": "atomic",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 4
+                        }
+                    ]
+                },
+                {
+                    "key": "8v560",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "b1knu",
+                    "text": "code block",
+                    "type": "code-block",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 10,
+                            "style": "BOLD"
+                        }
+                    ],
+                    "entityRanges": []
+                },
+                {
+                    "key": "eae2k",
+                    "text": "//test",
+                    "type": "code-block",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "style": "BOLD"
+                        }
+                    ],
+                    "entityRanges": []
+                },
+                {
+                    "key": "7vojs",
+                    "text": "",
+                    "type": "code-block",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "8ug30",
+                    "text": "",
+                    "type": "code-block",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "dmtm2",
+                    "text": "block quote",
+                    "type": "blockquote",
+                    "depth": 0,
+                    "inlineStyleRanges": [
+                        {
+                            "offset": 0,
+                            "length": 11,
+                            "style": "BOLD"
+                        }
+                    ],
+                    "entityRanges": []
+                },
+                {
+                    "key": "4v3tq",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "9kegn",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "ah21e",
+                    "text": " ",
+                    "type": "atomic",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": [
+                        {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 5
+                        }
+                    ]
+                },
+                {
+                    "key": "7p6jv",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                },
+                {
+                    "key": "4q8vc",
+                    "text": "",
+                    "type": "unstyled",
+                    "depth": 0,
+                    "inlineStyleRanges": [],
+                    "entityRanges": []
+                }
+            ]
+        }
     }
 ];
 

@@ -1,17 +1,16 @@
 import React from 'react';
+import ArticlePage from '../../../node_modules/easyblog/lib/api/article-page/article-page.js';
 
 class BlogArticle extends React.Component {
 
     render() {
         return (
-            <div>
-                This is a blog article: {this.props.test}
-            </div>
+            <ArticlePage article = {this.props.article} />
         )
     }
 }
 
 BlogArticle.propTypes = {
-    test: React.PropTypes.string.isRequired
+    article: React.PropTypes.object.isRequired
 };
 export default BlogArticle;

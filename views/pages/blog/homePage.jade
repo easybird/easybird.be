@@ -20,7 +20,8 @@ block mainContent
                 div.collapsible-body
                     div.container#easyblog
                         div.section
-                        div#easybird-articles
+                        div#blog-overview-app
+                            !=react.renderedApp
             li
                 div.collapsible-header
                     div.row.valign-wrapper
@@ -39,6 +40,5 @@ block mainContent
                         div#personal-articles
 block append javascripts
     script.
-        var articleListProps = !{JSON.stringify(easyblog.articleListProps).replace(/<\//g, "<\\/")};
-        var articleListId = "easybird-articles"
-    script(type = 'text/javascript' src="/easyblog/articleList.bundle.js")
+        var blogOverviewProps = !{JSON.stringify(react.initProps).replace(/<\//g, "<\\/")};
+    script(type = 'text/javascript' src=react.bundle)
