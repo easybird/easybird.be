@@ -38,7 +38,8 @@ app.use("/easyblog", express.static(path.join(__dirname, 'node_modules', 'easybl
 
 app.use('/', languageDetector.getParser());
 app.use(languageDetector.config.getLanguageRoute(), routes.homePage);
-app.use(languageDetector.config.getLanguageRoute('/blog'), routes.blog);
+app.use(languageDetector.config.getLanguageRoute('/blog'), routes.blogOverview);
+app.use(languageDetector.config.getLanguageRoute('/blog'), routes.blogArticle);
 app.use(languageDetector.config.getLanguageRoute('/:url?'), routes.redirect);
 app.use('/*', languageDetector.getFinder());
 

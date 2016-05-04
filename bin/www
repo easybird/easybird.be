@@ -1,100 +1,149 @@
 #!/usr/bin/env node
+var Promise = require("bluebird");
+var endOfLine = require('os').EOL;
 
 /**
  * Module dependencies.
  */
 
-startupDb();
+compileFrontEnd()
+    .then(compileBackEnd)
+    .then(startupDb)
+    .then(startExpress)
+    .then(function () {
+        console.log(
+            endOfLine +
+            "Express Started." +
+            endOfLine
+        )
+    });
+
+function compileFrontEnd() {
+    return new Promise(function (resolve) {
+
+        console.log("Start compiling front-end...");
+        var webpack = require('webpack');
+        var webpackConfig = process.env.NODE_ENV === "production" ? require('../webpack.prod.config.js') : require('../webpack.config.js');
+
+        return webpack(webpackConfig, function (err, stats) {
+            var jsonStats = stats.toJson();
+            if (err) throw new Error(err);
+            if (jsonStats.errors.length > 0) throw new Error(jsonStats.errors);
+            if (jsonStats.warnings.length > 0)
+                console.log(jsonStats.warnings);
+            return resolve();
+        });
+    })
+}
+
+function compileBackEnd() {
+    return new Promise(function (resolve) {
+        console.log("Start compiling back-end...");
+        require("babel-register")({
+            ignore: [/node_modules/, /public\/javascripts/],
+            presets: ["es2015", "react"]
+        });
+        return resolve();
+    })
+}
 
 function startupDb() {
-    var db = require('../model/db');
-    db.connectToDatabase(startExpress);
+    return new Promise(function (resolve) {
+        console.log("Starting up DB...");
+        var db = require('../model/db');
+        return db.connectToDatabase(resolve);
+    })
 }
 
 function startExpress() {
+    return new Promise(function (resolve) {
+        console.log("Starting up express...");
 
-    var app = require('../app');
-    var debug = require('debug')('test-app:server');
-    var http = require('http');
+        var app = require('../app');
+        var debug = require('debug')('test-app:server');
+        var http = require('http');
 
-    /**
-     * Get port from environment and store in Express.
-     */
+        /**
+         * Get port from environment and store in Express.
+         */
 
-    var port = normalizePort(process.env.PORT || '3000');
-    app.set('port', port);
+        var port = normalizePort(process.env.PORT || '3000');
+        app.set('port', port);
 
-    /**
-     * Create HTTP server.
-     */
+        /**
+         * Create HTTP server.
+         */
 
-    var server = http.createServer(app);
+        var server = http.createServer(app);
 
-    /**
-     * Listen on provided port, on all network interfaces.
-     */
+        /**
+         * Listen on provided port, on all network interfaces.
+         */
 
-    server.listen(port);
-    server.on('error', onError);
-    server.on('listening', onListening);
+        server.listen(port);
+        server.on('error', onError);
+        server.on('listening', onListening);
 
-    /**
-     * Normalize a port into a number, string, or false.
-     */
+        /**
+         * Normalize a port into a number, string, or false.
+         */
 
-    function normalizePort(val) {
-        var port = parseInt(val, 10);
+        function normalizePort(val) {
+            var port = parseInt(val, 10);
 
-        if (isNaN(port)) {
-            // named pipe
-            return val;
+            if (isNaN(port)) {
+                // named pipe
+                return val;
+            }
+
+            if (port >= 0) {
+                // port number
+                return port;
+            }
+
+            return false;
         }
 
-        if (port >= 0) {
-            // port number
-            return port;
-        }
+        /**
+         * Event listener for HTTP server "error" event.
+         */
 
-        return false;
-    }
-
-    /**
-     * Event listener for HTTP server "error" event.
-     */
-
-    function onError(error) {
-        if (error.syscall !== 'listen') {
-            throw error;
-        }
-
-        var bind = typeof port === 'string'
-            ? 'Pipe ' + port
-            : 'Port ' + port;
-
-        // handle specific listen errors with friendly messages
-        switch (error.code) {
-            case 'EACCES':
-                console.error(bind + ' requires elevated privileges');
-                process.exit(1);
-                break;
-            case 'EADDRINUSE':
-                console.error(bind + ' is already in use');
-                process.exit(1);
-                break;
-            default:
+        function onError(error) {
+            if (error.syscall !== 'listen') {
                 throw error;
+            }
+
+            var bind = typeof port === 'string'
+                ? 'Pipe ' + port
+                : 'Port ' + port;
+
+            // handle specific listen errors with friendly messages
+            switch (error.code) {
+                case 'EACCES':
+                    console.error(bind + ' requires elevated privileges');
+                    process.exit(1);
+                    break;
+                case 'EADDRINUSE':
+                    console.error(bind + ' is already in use');
+                    process.exit(1);
+                    break;
+                default:
+                    throw error;
+            }
         }
-    }
 
-    /**
-     * Event listener for HTTP server "listening" event.
-     */
+        /**
+         * Event listener for HTTP server "listening" event.
+         */
 
-    function onListening() {
-        var addr = server.address();
-        var bind = typeof addr === 'string'
-            ? 'pipe ' + addr
-            : 'port ' + addr.port;
-        debug('Listening on ' + bind);
-    }
+        function onListening() {
+            var addr = server.address();
+            var bind = typeof addr === 'string'
+                ? 'pipe ' + addr
+                : 'port ' + addr.port;
+            debug('Listening on ' + bind);
+        }
+
+        return resolve();
+    });
 }

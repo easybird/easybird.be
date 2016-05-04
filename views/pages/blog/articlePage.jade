@@ -12,7 +12,8 @@ block mainContent
         div.section
         div.row#easyblog
             div.col.s12.m8.offset-m2
-                div#article-page
+                div#blog-article-app
+                    !=react.renderedApp
                 div.hide-on-med-and-up
                     include ../../external/share/social-media-links
                 include ../../external/disqus/disqus
@@ -23,6 +24,5 @@ block mainContent
 
 block append javascripts
     script.
-        var articlePageProps = !{JSON.stringify(easyblog.articlePageProps).replace(/<\//g, "<\\/")};
-        var articlePageId = "article-page";
-    script(type = 'text/javascript' src="/easyblog/articlePage.bundle.js")
+        var blogArticleProps = !{JSON.stringify(react.initProps).replace(/<\//g, "<\\/")};
+    script(type = 'text/javascript' src=react.bundle)
