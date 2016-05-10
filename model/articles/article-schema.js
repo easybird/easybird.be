@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 var articleSchema = new Schema({
     route: String,
     articleUrl: String,
+    categories: [String],
     title: String,
     subTitle: String,
     date: String,
@@ -19,5 +20,6 @@ var articleSchema = new Schema({
 }, {collection: 'articles'});
 
 articleSchema.index({route: 1, isDeleted: 1});
+articleSchema.index({categories: 1, isDeleted: 1});
 
 module.exports = mongoose.model('Article', articleSchema);

@@ -1,19 +1,28 @@
-var Article = require("../model/articles/article-schema.js");
-var articlesJson = require("../data/example/articles.json");
+import Article from "../model/articles/article-schema.js";
 
-var getArticles = function(callback) {
-    Article.find({isDeleted: false}, null, { sort: { publicationDate: -1}}, function(err, articles) {
-        callback(err, articles)
+function findByCategory(category) {
+    return new Promise((resolve, reject) => {
+        Article.find(
+            {categories: category, isDeleted: false},
+            null,
+            {sort: {publicationDate: -1}},
+            (err, articles) => {
+                if (err) return reject(err);
+                return resolve(articles);
+            });
     });
 };
 
-var findByRoute = function(route, callback) {
-    Article.find({ route: route, isDeleted: false }, function(err, articles) {
-        callback(err, articles[0])
+export function findByRoute(route, callback) {
+    Article.find({route: route, isDeleted: false}, function (err, articles) {
+        return callback(err, articles[0])
     })
 };
 
-module.exports = {
-    getArticles: getArticles,
-    findByRoute: findByRoute
+export function getPersonalArticles() {
+    return findByCategory("personal");
+};
+
+export function getEasybirdArticles() {
+    return findByCategory("easybird");
 };
