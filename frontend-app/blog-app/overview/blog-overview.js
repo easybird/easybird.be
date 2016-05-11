@@ -8,15 +8,12 @@ class BlogOverview extends React.Component {
     constructor(props) {
         super(props);
 
-        this.list1 = this.props.articles.length > 0 ? [this.props.articles[0]] : [];
-        this.list2 = this.props.articles.length > 1 ? [this.props.articles[1]] : [];
-        this.list3 = this.props.articles.length > 2 ? [this.props.articles[2]] : [];
         this.viewPort = "";
 
         this.state = {
-            list1: this.list1,
-            list2: this.list2,
-            list3: this.list3
+            list1: this.props.articles.length > 0 ? [this.props.articles[0]] : [],
+            list2: this.props.articles.length > 1 ? [this.props.articles[1]] : [],
+            list3: this.props.articles.length > 2 ? [this.props.articles[2]] : []
         };
 
         this.splitArticles = (articles, viewPort) => this._splitArticles(articles, viewPort);
@@ -42,37 +39,38 @@ class BlogOverview extends React.Component {
     }
 
     _splitArticles(articles, viewPort) {
-        this.list1 = [];
-        this.list2 = [];
-        this.list3 = [];
+        let {list1, list2, list3} = this.state;
+        list1 = [];
+        list2 = [];
+        list3 = [];
 
         if (viewPort != VIEWPORT.LARGE) {
             articles.forEach(article => {
-                if (this.list1.length === this.list2.length) {
-                    this.list1.push(article)
+                if (list1.length === list2.length) {
+                    list1.push(article)
                 }
                 else {
-                    this.list2.push(article)
+                    list2.push(article)
                 }
             });
         } else {
             articles.forEach(article => {
-                if (this.list1.length === (this.list2.length + this.list3.length) / 2) {
-                    this.list1.push(article)
+                if (list1.length === (list2.length + list3.length) / 2) {
+                    list1.push(article)
                 }
-                else if (this.list2.length === this.list3.length) {
-                    this.list2.push(article)
+                else if (list2.length === list3.length) {
+                    list2.push(article)
                 }
                 else {
-                    this.list3.push(article)
+                    list3.push(article)
                 }
             });
         }
 
         this.setState({
-            list1: this.list1,
-            list2: this.list2,
-            list3: this.list3
+            list1: list1,
+            list2: list2,
+            list3: list3
         })
 
     }
