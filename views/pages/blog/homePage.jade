@@ -4,40 +4,9 @@ block append stylesheets
     link(rel='stylesheet' type='text/css' href="/stylesheets/easyblog/easyblog.css" media='screen,projection')
 
 block mainContent
-    div.container
-        div.section
-        div.row: div.col.s12: ul.collapsible.popout(data-collapsible="accordion")
-            li
-                div.collapsible-header.active
-                    div.row.valign-wrapper
-                        div.col.s4.m2.offset-m1
-                            img.circle.responsive-img.valign(src="/images/logo/easybird.png")
-                        div.col.s8.m8.offset-m1
-                            div.row
-                                h5.light-green-text EasyBlog
-                            div.row
-                                p.brown-text "Blogging about frameworks, technologies, other stuff.."
-                div.collapsible-body
-                    div.container#easyblog
-                        div.section
-                        div#blog-overview-app
-                            !=react.renderedApp
-            li
-                div.collapsible-header
-                    div.row.valign-wrapper
-                        div.col.s4.m2.offset-m1
-                            img.circle.responsive-img.valign(src="/images/blog/jonathan.png")
-                        div.col.s8.m8.offset-m1
-                            div.row
-                                h5.light-green-text Jonathan's Blog
-                            div.row
-                                p.brown-text "Blogging about thoughts, experiences, personal life"
-                div.collapsible-body
-                    p This blog contains personal data
-                    div.divider
-                        div.section
-                        //TODO fix to make it work with multiple articleList bundles.
-                        div#personal-articles
+    div#blog-overview-app
+        !=react.renderedApp
+
 block append javascripts
     script.
         var blogOverviewProps = !{JSON.stringify(react.initProps).replace(/<\//g, "<\\/")};

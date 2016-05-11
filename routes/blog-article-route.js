@@ -1,10 +1,10 @@
 import ReactDOMServer from 'react-dom/server';
 import React from 'react';
 import BlogArticle from '../frontend-app/blog-app/article/blog-article.js';
+import { findByRoute } from '../services/article-service.js';
 var express = require('express');
 var router = express.Router();
 var locals = require("../helpers/locals");
-var ArticleService = require("../services/article-service");
 var baseUrl = require("../middleware/helpers/baseUrl");
 var path = require("path");
 var _ = require("lodash");
@@ -17,7 +17,7 @@ router.get('/:url',
         locals.addSiteLocals(res, {
             currentRoute: '/blog/' + route
         });
-        ArticleService.findByRoute(route, renderArticle);
+        findByRoute(route, renderArticle);
 
 
         function renderArticle(err, article) {

@@ -3,6 +3,7 @@
     "route": "future-react",
     "title": "this is the title",
     "subTitle": "this is the subtitle",
+    "categories": ["easybird"],
     "content": {
       "entityMap": {
         "0": {
@@ -302,6 +303,7 @@
     "route": "transform-es6-to-es5-with-babel",
     "title": "this is the title",
     "subTitle": "this is the subtitle",
+    "categories": ["personal"],
     "content": {
       "entityMap": {
         "0": {
