@@ -22,8 +22,8 @@ export function getPersonalArticles(req, res, next) {
         .then(addArticlesToReq(req, next));
 }
 
-export function getEasybirdArticles(req, res, next) {
-    return ArticleService.getEasybirdArticles()
+export function getEasyBlogArticles(req, res, next) {
+    return ArticleService.getEasyBlogArticles()
         .then(enrichArticleList(res))
         .then(addArticlesToReq(req, next));
 }

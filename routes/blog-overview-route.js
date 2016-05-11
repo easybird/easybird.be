@@ -1,7 +1,7 @@
 import ReactDOMServer from 'react-dom/server';
 import React from 'react';
 import BlogOverview from '../frontend-app/blog-app/overview/blog-overview.js';
-import { getEasybirdArticles, getPersonalArticles} from '../middleware/facades/article-facade.js';
+import { getEasyBlogArticles, getPersonalArticles} from '../middleware/facades/article-facade.js';
 var express = require('express');
 var router = express.Router();
 var locals = require("../helpers/locals");
@@ -13,7 +13,7 @@ const BASE_ROUTE = "/blog";
 router.get(['/', '/easyblog'],
     changeCurrentBaseRoute(BASE_ROUTE),
     addDefaultRenderData,
-    getEasybirdArticles,
+    getEasyBlogArticles,
     addEasybirdBlogRenderData,
     renderBlogOverview
 );

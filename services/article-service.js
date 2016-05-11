@@ -23,6 +23,6 @@ export function getPersonalArticles() {
     return findByCategory("personal");
 };
 
-export function getEasybirdArticles() {
-    return findByCategory("easybird");
+export function getEasyBlogArticles() {
+    return findByCategory("easyblog");
 };
