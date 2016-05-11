@@ -1,6 +1,6 @@
 module.exports = {
-    homePage: require('./homePage'),
-    redirect: require('./redirect'),
-    blogOverview: require('./blog-overview'),
-    blogArticle: require('./blog-article')
+    homePage: require('./home-page-route'),
+    redirect: require('./redirect-route'),
+    blogOverview: require('./blog-overview-route'),
+    blogArticle: require('./blog-article-route')
 };

@@ -1,3 +1,11 @@
 {
-  "BANNER_TITLE": "Flyin' the easy way"
+  "BANNER_TITLE": "Flyin' the easy way",
+  "easyBlog": {
+    "BANNER_NAME": "EasyBlog",
+    "BANNER_TITLE": "Blogging about frameworks, technologies, other stuff.."
+  },
+  "personalBlog": {
+    "BANNER_NAME": "Jonathan's Blog",
+    "BANNER_TITLE": "Blogging about thoughts, experiences and personal life"
+  }
 }

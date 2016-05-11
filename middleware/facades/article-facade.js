@@ -4,8 +4,7 @@ var locals = require("../../helpers/locals");
 
 function enrichArticleList(res) {
     return (articles) => {
-        var siteLocals = locals.findSiteLocals(res);
-        articles.forEach(article => article.articleUrl = path.resolve("/", siteLocals.currentLanguage, siteLocals.currentRoute, article.route));
+        articles.forEach(article => article.articleUrl = locals.appendCurrentUrl(res , article.route));
         return articles;
     };
 }

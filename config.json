@@ -52,11 +52,11 @@
     "components": {
       "blogOverview": {
         "entry": "blog-app/overview/blog-overview-app.js",
-        "bundle": "blog-overview.bundle.js"
+        "bundle": "blogOverview.bundle.js"
       },
       "blogArticle": {
         "entry": "blog-app/article/blog-article-app.js",
-        "bundle": "blog-article.bundle.js"
+        "bundle": "blogArticle.bundle.js"
       }
     }
   }

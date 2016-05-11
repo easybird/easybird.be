@@ -1,3 +1,4 @@
+var path = require("path");
 var _ = require("lodash");
 
 function findSiteLocals(res) {
@@ -11,7 +12,13 @@ function addSiteLocals(res, properties) {
     _.assign(findSiteLocals(res), properties);
 }
 
+function appendCurrentUrl(res, relativeUrl) {
+    let siteLocals = findSiteLocals(res);
+    return path.resolve("/", siteLocals.currentLanguage, siteLocals.currentRoute, relativeUrl)
+}
+
 module.exports = {
     findSiteLocals: findSiteLocals,
-    addSiteLocals: addSiteLocals
+    addSiteLocals: addSiteLocals,
+    appendCurrentUrl: appendCurrentUrl
 }

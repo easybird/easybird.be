@@ -3,7 +3,11 @@
         .container
             br
             br
-            h1.header.center Easybird
+            h1.header.center
+                if content.BANNER_NAME
+                    !=content.BANNER_NAME
+                else
+                    |Easybird
             .row.center
                 h5.header.col.s12.light!=content.BANNER_TITLE
     .parallax
