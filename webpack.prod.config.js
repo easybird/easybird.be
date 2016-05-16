@@ -4,7 +4,7 @@ var APP_DIR = path.resolve(__dirname, reactConfig.appDir);
 var BUILD_DIR = path.resolve(__dirname, reactConfig.buildDir);
 
 var config = {
-    devtool: 'eval',
+    devtool: 'source-map',
     entry: {
         blogOverview: APP_DIR + "/" + reactConfig.components.blogOverview.entry,
         blogArticle: APP_DIR + "/" + reactConfig.components.blogArticle.entry
@@ -24,7 +24,20 @@ var config = {
                 }
             }
         ]
-    }
+    },
+    plugins:[
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.DefinePlugin({
+            'process.env':{
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compressor:{
+                warnings: true
+            }
+        })
+    ]
 };
 
 module.exports = config;
