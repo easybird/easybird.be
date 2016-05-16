@@ -2,6 +2,7 @@ var reactConfig = require("./config.json").react;
 var path = require('path');
 var APP_DIR = path.resolve(__dirname, reactConfig.appDir);
 var BUILD_DIR = path.resolve(__dirname, reactConfig.buildDir);
+var webpack = require("webpack");
 
 var config = {
     devtool: 'source-map',
