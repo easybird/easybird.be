@@ -36,6 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/easyblog", express.static(path.join(__dirname, 'node_modules', 'easyblog', 'dist')));
 
+app.use('/klusbus', routes.klusbus);
 app.use('/', languageDetector.getParser());
 app.use(languageDetector.config.getLanguageRoute(), routes.homePage);
 app.use(languageDetector.config.getLanguageRoute('/blog'), routes.blogOverview);
