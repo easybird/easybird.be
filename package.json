@@ -9,7 +9,7 @@
     "start": "node ./bin/www",
     "auto-start": "forever -w ./bin/www",
     "start-prod": "NODE_ENV=production node ./bin/www",
-    "check-coverage": "istanbul check-coverage --statements 80 --branches 50 --functions 70 --lines 80",
+    "check-coverage": "istanbul check-coverage --statements 50 --branches 50 --functions 50 --lines 50",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "test": "NODE_ENV=test mocha -w --compilers js:babel-register --recursive",
     "test-single": "NODE_ENV=test istanbul cover -x *.test.js _mocha -- --compilers js:babel-register --recursive"
