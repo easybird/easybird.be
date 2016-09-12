@@ -19,6 +19,8 @@ compileFrontEnd()
     });
 
 function compileFrontEnd() {
+    //temporary disable slow compile...
+    return Promise.resolve();
     return new Promise(function (resolve) {
 
         console.log("Start compiling front-end...");

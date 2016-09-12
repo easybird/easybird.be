@@ -1,0 +1,20 @@
+extends ../../../layout
+
+block header
+
+block main
+    .container.section.scrollspy
+        h3 Generate a new contract
+        .section
+            form(action=data.url method='post')
+                p Add the data for a new generated contract:
+                each formData in data.form
+                    div.row
+                        div.col.m4
+                            p.light!=formData.label
+                        div.col.m4
+                            input(type="text" name=formData.id placeholder=(formData.placeholder || formData.label))
+                a.waves-effect.waves-light.btn
+                    input(type='submit' value='Download contract')
+
+block footer

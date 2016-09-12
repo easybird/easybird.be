@@ -12,7 +12,8 @@ nav.white(role='navigation')
             else
                 li
                     a(href='/' + site.currentLanguage + '/blog') Blog
-                each locale in site.locales
-                    li
-                        -var localeUpperCase = locale.toUpperCase()
-                        a(href='/' + locale + site.currentRoute)=localeUpperCase
+                if site.locales
+                    each locale in site.locales
+                        li
+                            -var localeUpperCase = locale.toUpperCase()
+                            a(href='/' + locale + site.currentRoute)=localeUpperCase
