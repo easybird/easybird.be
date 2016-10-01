@@ -5,8 +5,16 @@ import createPdf from '../middleware/contract/createPdf';
 
 var router = express.Router();
 
-router.get('/', createContractRenderMiddleware);
+router.get(
+    '/', 
+    createContractRenderMiddleware
+);
 
-router.post('/', createContract, createPdf, (req, res) => res.json({'test': 'received!!!'}));
+router.post(
+    '/', 
+    createContract, 
+    createPdf, 
+    (req, res) => res.json({'test': 'received!!!'})
+);
 
 module.exports = router;

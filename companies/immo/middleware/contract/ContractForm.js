@@ -1,10 +1,25 @@
+import moment from 'moment';
+
 export default class ContractForm {
     constructor({ checkInDate, checkOutDate, totalNights, rentalRate, guestName, totalPersons }) {
         this.guestName = guestName;
-        this.checkInDate= checkInDate;
+        this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.totalNigths = totalNights;
-        this.rentalRate = rentalRate;
-        this.totalPersons = totalPersons;
+        this.rentalRate = Number(rentalRate);
+        this.totalPersons = Number(totalPersons);
+    }
+
+    transform(text) {
+        text = text.replace("<GUEST-NAME></GUEST-NAME>", this.guestName);
+        text = text.replace("<CHECK-IN-DATE></CHECK-IN-DATE>", this.checkInDate);
+        text = text.replace("<CHECK-OUT-DATE></CHECK-OUT-DATE>", this.checkOutDate);
+        text = text.replace("<TOTAL-NIGHTS></TOTAL-NIGHTS>", this.totalNigths);
+        text = text.replace("<RENTAL-RATE></RENTAL-RATE>", this.rentalRate);
+
+        text = text.replace("<TOTAL-DUE></TOTAL-DUE>", 500 + this.rentalRate);
+        text = text.replace("<TOTAL-PERSONS-1></TOTAL-PERSONS-1>", -1 + this.totalPersons);
+        text = text.replace("<TODAY-DATE></TODAY-DATE>", moment().format('DD/MM/YYYY'));
+        return text;
     }
 };
