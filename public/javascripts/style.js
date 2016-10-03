@@ -5,6 +5,8 @@
         $('.parallax').parallax();
 
         $(document).ready(function () {
+            $('select').material_select();
+
             $('.scrollspy').scrollSpy();
 
             // Floating-Fixed table of contents
@@ -18,7 +20,6 @@
                     bottom: bottomOffset
                 });
             }, 100);
-
 
             /**
              * JS: Progress bar

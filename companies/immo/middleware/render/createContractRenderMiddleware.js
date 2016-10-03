@@ -5,6 +5,45 @@ export default function(req, res, next) {
             title: 'Create contract'
         },
         data: {
+            dropDown: [
+                {
+                    id: "contractType",
+                    label: "Contract type",
+                    options: [
+                        {
+                            id: "rentalAgreement",
+                            value: "Booked contract"
+                        },
+                        {
+                            id: "exampleAgreement",
+                            value: "Example contract"
+                        },
+                        {
+                            id: "welcome",
+                            value: "Welcome bundle"
+                        }
+                    ]
+                },
+                {
+                    id: "language",
+                    label: "Language",
+                    options: [
+                        {
+                            id: "nl",
+                            value: "Nederlands"
+                        },
+                        {
+                            id: "en",
+                            value: "English"
+                        },
+                        {
+                            id: "fr",
+                            value: "Francais"
+                        }
+                    ]
+                }
+                
+            ],
             form: [
                 {
                     id: "checkInDate",

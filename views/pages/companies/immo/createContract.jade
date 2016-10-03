@@ -8,12 +8,20 @@ block main
         .section
             form(action=data.url method='post')
                 p Add the data for a new generated contract:
+                each dropDown in data.dropDown
+                    div.row
+                        .input-field.col.s12
+                            select(name=dropDown.id)
+                                each option in dropDown.options
+                                    option(value=option.id)=option.value
+                            label(for=dropDown.id)=dropDown.label
+
                 each formData in data.form
                     div.row
                         div.col.m4
                             p.light!=formData.label
                         div.col.m4
-                            input(type="text" name=formData.id placeholder=(formData.placeholder || formData.label))
+                            input.validate(type="text" name=formData.id placeholder=(formData.placeholder || formData.label))
                 a.waves-effect.waves-light.btn
                     input(type='submit' value='Download contract')
 

@@ -11,10 +11,18 @@ export default function createPdf(req, res) {
         throw new Error('ContractForm is mandatory to create a PDF');
     }
     const contractForm = req.contractForm;
-    // const html = fs.readFileSync('./companies/immo/data/fr/rentalAgreement.html', 'utf8');
-    const html = fs.readFileSync('./companies/immo/data/fr/RentalAgreement-FR.html', 'utf8');
+    
+    let header = 'CONTRAT DE LOCATION'; 
+    if (contractForm.contractType === 'exampleAgreement') {
+        header = 'CONTRAT DE LOCATION - EXAMPLE'
+    } else if (contractForm.contractType === 'welcome') {
+        header = 'WELCOME BUNDLE'
+    }
+    
+    const fileName = `./companies/immo/data/${contractForm.language}/${contractForm.contractType}.html`;
+    const html = fs.readFileSync(fileName, 'utf8');
 
-    pdf.create(contractForm.transform(html), {
+    var options = {
         format: 'Letter',
         "border": {
             "top": "1cm",            // default is 0, units: mm, cm, in, px
@@ -25,7 +33,7 @@ export default function createPdf(req, res) {
         "header": {
             "height": "15mm",
             "contents": {
-                default: '<div style="color: #444; text-align:right"><i>CONTRAT DE LOCATION</i></div>'
+                default: `<div style="color: #444; text-align:right"><i>${header}</i></div>`
             }
         },
         "footer": {
@@ -33,11 +41,13 @@ export default function createPdf(req, res) {
                 default: '<div style="color: #444; text-align: right"><i>{{page}}</i></div>'
             }
         }
-    })
+    };
+    pdf.create(contractForm.transform(html), options)
         .toStream(function (err, pdfStream) {
-            res.attachment(`${contractForm.guestName}-rentalAggreement.pdf`);
+            const pdfName = contractForm.getFileName();
+            console.log(`pdfName:${pdfName}`);
+            res.attachment(`${pdfName}.pdf`);
             res.setHeader('content-type', 'application/pdf');
             pdfStream.pipe(res);
-            console.log(`yes worked nottt...`);
         });
 };
