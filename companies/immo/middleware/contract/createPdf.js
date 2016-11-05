@@ -11,13 +11,9 @@ export default function createPdf(req, res) {
         throw new Error('ContractForm is mandatory to create a PDF');
     }
     const contractForm = req.contractForm;
+
     
-    let header = 'CONTRAT DE LOCATION'; 
-    if (contractForm.contractType === 'exampleAgreement') {
-        header = 'CONTRAT DE LOCATION - EXAMPLE'
-    } else if (contractForm.contractType === 'welcome') {
-        header = 'WELCOME BUNDLE'
-    }
+    let header = getHeader(contractForm);
     
     const fileName = `./companies/immo/data/${contractForm.language}/${contractForm.contractType}.html`;
     const html = fs.readFileSync(fileName, 'utf8');
@@ -42,7 +38,7 @@ export default function createPdf(req, res) {
             }
         }
     };
-    pdf.create(contractForm.transform(html), options)
+    return pdf.create(contractForm.transform(html), options)
         .toStream(function (err, pdfStream) {
             const pdfName = contractForm.getFileName();
             console.log(`pdfName:${pdfName}`);
@@ -50,4 +46,31 @@ export default function createPdf(req, res) {
             res.setHeader('content-type', 'application/pdf');
             pdfStream.pipe(res);
         });
+
+
+    function getHeader(contractForm) {
+        if (contractForm.language === 'fr') {
+            if (contractForm.contractType === 'exampleAgreement') {
+                return 'CONTRAT DE LOCATION - EXAMPLE';
+            } else if (contractForm.contractType === 'welcome') {
+                return 'BIENVENUE';
+            }
+            return 'CONTRAT DE LOCATION';
+        } else if (contractForm.language === 'en') {
+            if (contractForm.contractType === 'exampleAgreement') {
+                return 'RENTAL AGREEMENT - EXAMPLE';
+            } else if (contractForm.contractType === 'welcome') {
+                return 'WELCOME';
+            }
+            return 'RENTAL AGREEMENT';
+        } else {
+            if (contractForm.contractType === 'exampleAgreement') {
+                return 'HUUR CONTRACT - VOORBEELD';
+            } else if (contractForm.contractType === 'welcome') {
+                return 'WELKOM';
+            }
+            return 'HUUR CONTRACT';
+        }
+    }
+    
 };

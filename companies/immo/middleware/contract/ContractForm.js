@@ -8,7 +8,7 @@ export default class ContractForm {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.totalNigths = totalNights;
-        this.rentalRate = Number(rentalRate);
+        this.rentalRate = Number(rentalRate.replace(/,/g, '.'));
         this.totalPersons = Number(totalPersons);
     }
 
@@ -19,7 +19,7 @@ export default class ContractForm {
         text = text.replace("<TOTAL-NIGHTS></TOTAL-NIGHTS>", this.totalNigths);
         text = text.replace("<RENTAL-RATE></RENTAL-RATE>", this.rentalRate);
 
-        text = text.replace("<TOTAL-DUE></TOTAL-DUE>", 500 + this.rentalRate);
+        text = text.replace("<TOTAL-DUE></TOTAL-DUE>", (500 + this.rentalRate).toFixed(2));
         text = text.replace("<TOTAL-PERSONS-1></TOTAL-PERSONS-1>", -1 + this.totalPersons);
         text = text.replace("<TODAY-DATE></TODAY-DATE>", moment().format('DD/MM/YYYY'));
         return text;

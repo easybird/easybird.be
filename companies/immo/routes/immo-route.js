@@ -5,15 +5,16 @@ import createPdf from '../middleware/contract/createPdf';
 
 var router = express.Router();
 
+// /immo
 router.get(
-    '/', 
+    '/',
     createContractRenderMiddleware
 );
 
 router.post(
-    '/', 
-    createContract, 
-    createPdf, 
+    '/',
+    createContract,
+    createPdf,
     (req, res) => res.json({'test': 'received!!!'})
 );
 
