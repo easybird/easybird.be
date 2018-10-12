@@ -22,6 +22,7 @@ class BlogPostTemplate extends React.Component {
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
         <h1>{post.frontmatter.title}</h1>
+        {post.frontmatter.subTitle && <h3>{post.frontmatter.subTitle}</h3>}
         <p
           style={{
             ...scale(-1 / 5),

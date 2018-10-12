@@ -4,21 +4,9 @@ subTitle: "Guideline using Travis CI, with Heroku, Istanbul and Codecov"
 date: "2016-04-13T22:12:03.284Z"
 ---
 
-#### 
+> Losing time with deploying your 'small' projects manually? In 30 minutes you setup an automatic deploy process with this tutorial.
 
-[Travis CI: Speed up development!](http://www.easybird.be/en/blog/automatic-release)
-
-##### 
-
-Guideline using Travis CI, with Heroku, Istanbul and Codecov
-
-Apr 13, 2016
-
-Losing time with deploying your 'small' projects manually? In 30 minutes you setup an automatic deploy process with this tutorial.
-
-##### 
-
-Step by step, but where to start?
+# Step by step, but where to start?
 
 The prerequisites for this tutorial are:
 
@@ -34,9 +22,7 @@ Follow the steps below, and you are up in no time:
 
 > Travis CI is like a kitchen robot: he does all boring, repetitive but - Ooh soO - important work without you even have to bother!
 
-##### 
-
-Link Github to Heroku
+# Link Github to Heroku
 
 We will first start with the most basic automatic deployment. You don't need Travis and other fancy tools to deploy automatically. With only Github and Heroku, an automatic deployment can be realised.
 
@@ -45,12 +31,9 @@ We will first start with the most basic automatic deployment. You don't need Tra
 3. Afterwards, deploy something to the Github deployment branch you specified on Heroku and see the automatic deployment taking place to your heroku app. When you are having issues, make sure your deployment branch contains at least a Procfile for Heroku, so it knows what to do for deployment.
 
 > Tip: Don't forget, you are using a public github repository for deployment to your environment: use the Heroku Config Variables for passwords and other secret stuff.
-
 > Add a Procfile to Heroku.
 
-##### 
-
-Setup a Travis CI account
+# Setup a Travis CI account
 
 Ok, now that we have a simple and basic automatic release, we will take it one step further.
 
@@ -63,13 +46,9 @@ Why adding Travis CI to this process? Well, as we want to make sure that are pro
 
 > If interested, a working example can be found [here](https://github.com/easybird/salesfunnel-abinbev/blob/develop/.travis.yml)
 
-##### 
-
-Add automatic testing and test coverage measurement with Istanbul and Codecov
+# Add automatic testing and test coverage measurement with Istanbul and Codecov
 
 > This part is specific for Node.js applications
-
-###### 
 
 We added Travis to the build process, but we didn't really use it's power yet. This section will show a part of it's power by adding a test battery to the automatic deployment process. We don't want to deploy our application without decent testing taking place!
 
@@ -79,11 +58,7 @@ If your application doesn't yet contain any tests, first add some tests! We are 
 
 Sweet! Now Travis is automatically performing our tests, and only when those are successful, the deployment to heroku is taking place. Now that we have the automatic testing battery, it would be nice to have some reporting about our code coverage. That's where [Istanbul.js](https://www.npmjs.com/package/istanbul) and [Codecov](https://codecov.io/) come in to play.
 
-###### 
-
-###### 
-
-Istanbul.js
+## Istanbul.js
 
 Istanbul.js is a node module which states itself as - quoting -'Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests.'
 
@@ -103,9 +78,7 @@ Travis will now only deploy when the project testing standards are met!
 
 > Tip: add the coverage folder to your .gitignore file, it doesn't make sense to push this folder to your remote git repository.
 
-###### 
-
-Codecov.io
+## Codecov.io
 
 Now that we have our test coverage, it would be nice to have this report somewhere easily accessible. That's where codecov comes in.
 
@@ -115,8 +88,6 @@ Now that we have our test coverage, it would be nice to have this report somewhe
 
 Travis will now trigger an upload of the testing results to codecov. This will be done after a successful test battery and before deployment.
 
-##### 
-
-Summary
+## Summary
 
 Et voila, this article showed you the power of Travis: The build and deployment process can be completely and easily customised with small subtasks, which are easily added as hooks to the travis.yml file. Use the [following](https://github.com/easybird/salesfunnel-abinbev) as an example project for more info, or add questions/comments/remarks below.
