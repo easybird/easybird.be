@@ -1,19 +1,9 @@
 ---
 title: "Good vs bad news"
 date: "2016-01-18T22:12:03.284Z"
+hero: "http://s32.postimg.org/lgply27lx/badnews.jpg"
 ---
-
-#### 
-
-[Good vs bad news](http://www.easybird.be/blog/good-vs-bad-news) 
-
-Jan 18, 2016
-
-![](http://s32.postimg.org/lgply27lx/badnews.jpg)
-
-##### 
-
-Day 8
+## Day 8
 
 My 8th day at Les Deux Alpes. The mountains. Second day that I’m completely on my own..without my girlfriend - sorry - wife! I still have to get used to this new “term” for the same relationship. 
 
@@ -21,9 +11,7 @@ I went running this morning, in the snow, -6 degrees Celsius at an altitude of 1
 
 Next Saturday there is a race on 2400 meters of altitude. You can run the 10km, 15km or 20km. Still doubting to run the 10 or the 15.. And I still have to visit a French doctor who has to give me a certificate that I’m in a good health.. “Typical for the French people”, the woman of the “l’office the tourisme” said. 
 
-##### 
-
-Good intentions
+## Good intentions
 
 [Nineteen days without alcohol](http://www.easybird.be/blog/alcohol), with 3 exceptions. Nice! 
 
@@ -36,4 +24,4 @@ For the time being, I will try to ban media. And I don’t mean social media. Lo
 
 So what annoys me is that the media only brings the bad news. 
 
-Perception is affected by multiple cognitive biases.. Psychology tells us people already tend to have a Negativity Bias (which basically says that people tend to pay more attention to bad news). On top of that, the fact that the media is focusing mainly on the “unexpected and tragic things” makes us - people - vulnerable for that other cognitive bias, neglecting probability. We already have the inability to properly grasp a proper sense of peril and risk (cfr. we are more afraid of being killed in an airplane than in a car, we are more afraid of being attacked by terrorists than of being killed by falling down the stairs - which is statistically more probable). We are all influenced by all this negative news.. It affects my mental health, I spend time being sad about things that are happening all around the world. Well..that’s why I asked myself, why do I have to care about all bad things in this world? There are more than 7 billion people on this world. Off course every day there are bad people killing and raping others. But there are far more people loving, kissing and giving each other compliments every day. My main message is, we already have a distorted cognitive mind which focusses more on the negative stuff and which tends to overestimate the statistical change that something bad - which we are not familiar with - will happen, why do we have to emphasise it in the media? “The distorted cognitive mind is a healthy cognitive reflex. Because of that, we learn to cope with those bad things, for the day we are really in danger. It helps us survive.” Normally I am against quota, but a good quota would be for every “bad” news item, there has to be a good one! Now our taxes go to journalists who only have to report all the bad stuff. Well, let the “Minister of Mental Health” spend his money on journalists who report about all fun and happy events all around the country. :-) When this is the case, please tell me. Than I will start watching the news again.
+Perception is affected by multiple cognitive biases.. Psychology tells us people already tend to have a Negativity Bias (which basically says that people tend to pay more attention to bad news). On top of that, the fact that the media is focusing mainly on the “unexpected and tragic things” makes us - people - vulnerable for that other cognitive bias, neglecting probability. We already have the inability to properly grasp a proper sense of peril and risk (cfr. we are more afraid of being killed in an airplane than in a car, we are more afraid of being attacked by terrorists than of being killed by falling down the stairs - which is statistically more probable). We are all influenced by all this negative news.. It affects my mental health, I spend time being sad about things that are happening all around the world. Well..that’s why I asked myself, why do I have to care about all bad things in this world? There are more than 7 billion people on this world. Off course every day there are bad people killing and raping others. But there are far more people loving, kissing and giving each other compliments every day. My main message is, we already have a distorted cognitive mind which focusses more on the negative stuff and which tends to overestimate the statistical change that something bad - which we are not familiar with - will happen, why do we have to emphasise it in the media? “The distorted cognitive mind is a healthy cognitive reflex. Because of that, we learn to cope with those bad things, for the day we are really in danger. It helps us survive.” Normally I am against quota, but a good quota would be for every “bad” news item, there has to be a good one! Now our taxes go to journalists who only have to report all the bad stuff. Well, let the “Minister of Mental Health” spend his money on journalists who report about all fun and happy events all around the country. 🙂 When this is the case, please tell me. Than I will start watching the news again.

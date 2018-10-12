@@ -2,19 +2,8 @@
 title: "On my way to create a blog"
 subTitle: "Choose the right platform"
 date: "2016-01-06T22:12:03.284Z"
+hero: "http://www.easybird.be/images/blog/posts/easyblog/2.jpg"
 ---
-
-#### 
-
-[On my way to create a blog](http://www.easybird.be/en/blog/creating-my-first-blog)
-
-##### 
-
-Choose the right platform
-
-Jan 6, 2016
-
-![](http://www.easybird.be/images/blog/posts/easyblog/2.jpg)
 
 A quick investigation using the almighty Google search engine told me that Tumblr could be it. Unfortunately, integrating with my own website learned that this platform didn't meet my requirements.
 
@@ -22,9 +11,7 @@ A quick investigation using the almighty Google search engine told me that Tumbl
 
 > I want a blog which runs on node.js and mongoDB!
 
-##### 
-
-Wordpress
+# Wordpress
 
 Next one on my list was the famously known [Wordpress](http://wordpress.com/). But on my first attempt to integrate this one, I got very annoyed by all the boilerplate that comes with this integration.
 
@@ -37,9 +24,7 @@ And on top of that..it's written in PHP! This reminds me at the old days.
 
 All this frustration brought me back to the reality of 2015: isn't there a CMS which uses the latest technologies? I want a blog which runs on node.js and mongoDB! I cannot be the first one with this frustration!
 
-### 
-
-BAM!
+# BAM!
 
 That's the point that the almighty [Google Search Engine](https://www.google.be/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=blog+node.js+mongodb+cms) introduced me to [PencilBlue](https://pencilblue.org/)
 

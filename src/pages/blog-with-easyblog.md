@@ -3,17 +3,6 @@ title: "Easyblog"
 subTitle: "Yet just another blogging framework?"
 date: "2016-01-18T22:12:03.284Z"
 ---
-
-#### 
-
-[Easyblog](http://www.easybird.be/en/blog/easyblog)
-
-##### 
-
-Yet just another blogging framework?
-
-Jan 18, 2016
-
 How do ideas start? Out of inspiration, out of frustration?
 
 Where do ideas start? In this case…under the shower.
@@ -23,6 +12,7 @@ Where do ideas start? In this case…under the shower.
 Well, I wanted to keep a blog about what I’m doing..but I don’t find a good integratable fluent and dynamic platform which is adapted to todays technology stack. I tried Pencilblue, in my opinion it goes in the right direction. But I’m having troubles with two important features:
 
 * the wysiwyg editor and the way to add custom css to it
+
 * the articles overview page: my first impression is that it’s buggy and not very straightforward to customise big time
 
 Well, I wanted to explore new technologies. I was thinking about Angular 2, ReactJS, the Google Project Tango.
