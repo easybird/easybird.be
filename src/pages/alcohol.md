@@ -2,7 +2,7 @@
 title: Alcohol
 subTitle: Alcohol stop
 date: "2016-01-18T22:12:03.284Z"
-hero: "http://s32.postimg.org/5smy01091/alcohol_492871_960_720.jpg"
+hero: "https://storage.googleapis.com/easybird-blog-images/alcohol.jpg"
 ---
 Nineteen days without alcohol, with 3 exceptions. “Hard habits die slow”, they say… Well funny thing is that I’m proud on the fact that I’m saying “no” to social drinking. It’s f\*cking hard..didn’t realise that before. But in retrospective, 3 out of 19.. that’s almost 1 out of 6 days that I still drank some alcohol..and I’m proud? 
 

@@ -1,7 +1,7 @@
 ---
 title: "Good vs bad news"
 date: "2016-01-18T22:12:03.284Z"
-hero: "http://s32.postimg.org/lgply27lx/badnews.jpg"
+hero: "https://storage.googleapis.com/easybird-blog-images/bad-news.jpg"
 ---
 ## Day 8
 
@@ -17,7 +17,7 @@ Next Saturday there is a race on 2400 meters of altitude. You can run the 10km, 
 
 But today, after my run, I had the feeling I have to do more. 
 
-For the time being, I will try to ban media. And I don’t mean social media. Love to here all the good things about my friends and family. I mean traditional media. Websites like [HLN.be](http://hln.be/), [Demorgen.be](http://demorgen.be/), [sporza.be](http://sporza.be/) and others.. Why? First of all, I spent too much time with this bullsh\*t. 
+For the time being, I will try to ban media. And I don’t mean social media. Love to here all the good things about my friends and family. I mean traditional media. Websites like [HLN.be](http://hln.be/), [Demorgen.be](http://demorgen.be/), [sporza.be](http://sporza.be/) and others.. Why? First of all, I spent too much time with this bullsh\*t.
 
 * Sport news, comes and goes. The good thing is that it’s most of the time focused on fun things, positive stuff!
 * Regular news..well, it just affects people (also mine!) their perception in a negative way! I’ll explain with an example. About a week ago there was an avalanche here at Les Deux Alpes. It’s a very quiet period of the year here. People are skiing, snowboarding, having fun, dining together, all in a relaxed environment. I didn’t see any press reporting that everybody was having a wonderful time. Suddenly, something very bad happens..unfortunately on a closed black slope some people got hit by a huge avalanche..two French kids and one Ukrainian guy died in it.. very sad news, everybody in this village was shocked by the news. Some helicopters flew around, massive “ambulances” and “pistiers” came to the rescue and search for the remaining people that were freezing under the snow. And what happens? All of the sudden Les Deux Alpes is full of press. Like flies who smell some fresh shit to sit on. I know, it’s their job and they have to report it. People have to know. Some people their family died here. They have the right to know everything about it. Unfortunately it makes my loved ones at home - who heard about it in the media - even more afraid of my 3 months presence in the alps. They are not familiar with skiing, they only hear the bad things. Who is saying goodbye to someone that goes skiing with “break a leg”? People that don’t have any experience in the mountains. They only get in touch with skiing and snowboarding in a negative way. You can’t blame their perception to be distorted.

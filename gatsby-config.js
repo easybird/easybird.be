@@ -5,7 +5,7 @@ module.exports = {
     description: 'A blog for software devs and mind wanderers',
     siteUrl: 'https://easybird.be/blog/',
   },
-  pathPrefix: '/blog',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -50,7 +50,7 @@ module.exports = {
       options: {
         name: `Easybird's blog`,
         short_name: `Blog`,
-        start_url: `/`,
+        start_url: `/blog/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,

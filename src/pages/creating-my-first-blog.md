@@ -2,7 +2,7 @@
 title: "On my way to create a blog"
 subTitle: "Choose the right platform"
 date: "2016-01-06T22:12:03.284Z"
-hero: "http://www.easybird.be/images/blog/posts/easyblog/2.jpg"
+hero: "https://storage.googleapis.com/easybird-blog-images/keep-calm-blog.jpg"
 ---
 
 A quick investigation using the almighty Google search engine told me that Tumblr could be it. Unfortunately, integrating with my own website learned that this platform didn't meet my requirements.

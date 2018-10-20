@@ -2,7 +2,7 @@
 title: "Introduction to pencilblue"
 subTitle: "Getting started"
 date: "2016-01-06T22:12:03.284Z"
-hero: "http://www.easybird.be/images/blog/posts/easyblog/3.png"
+hero: "https://storage.googleapis.com/easybird-blog-images/pencilblue.png"
 ---
 ## Getting things up and running
 
@@ -18,7 +18,7 @@ Unfortunately, apart for some long explanatory tutorials, it's the only part tha
 
 Another minor problems could be that the contributors seem less and less interested in the project themself (cfr. the commits in their Github repository).
 
-![](http://www.easybird.be/images/blog/posts/easyblog/3a.jpg)
+![](https://storage.googleapis.com/easybird-blog-images/stats.jpg)
 
 Nevertheless, the project still felt "right" to me, so I thought I should give it a try.
 

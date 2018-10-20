@@ -2,7 +2,7 @@
 title: "The future of front-end development frameworks"
 subTitle: "React.js, the library that naturally forces you to use web components"
 date: "2016-04-15T22:12:03.284Z"
-hero: "http://www.easybird.be/images/blog/posts/easyblog/5.jpg"
+hero: "https://storage.googleapis.com/easybird-blog-images/future.jpg"
 ---
 
 Notice the subtle difference in the title vs. the subtitle? Every couple of years, a new framework is hot in front-end development land. There's mostly a lot of buzz about some kind of new SPA framework. Over the years, the following frameworks did receive a lot of attention [GTW](http://www.gwtproject.org/), [Knockout](http://knockoutjs.com/), [Backbone](http://backbonejs.org/),[Angular 1](https://angularjs.org/)..and now, a new library has been introduced: [React](https://facebook.github.io/react)!

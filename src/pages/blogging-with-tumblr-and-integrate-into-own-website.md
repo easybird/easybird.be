@@ -2,7 +2,7 @@
 title: "Start blogging @ Tumblr"
 subTitle: "Integrate into your own website"
 date: "2016-01-06T22:12:03.284Z"
-hero: "http://www.easybird.be/images/blog/posts/easyblog/1.jpg"
+hero: "https://storage.googleapis.com/easybird-blog-images/blogging-with-tumblr.jpg"
 ---
 ## Choose the right platform
 
@@ -31,7 +31,7 @@ First step down..posting is easy! Just click the post button and you are up and 
 
 Next up, I chose my avatar and my header image (the long image on top of this article). Clicking on the dots below the article gives you a permalink which is visible from the Google Chrome Incognito browser, which means that the blogpost is visible for everyone, also for people that are not logged into [tumblr](https://tumblr.com/).
 
-![](http://www.easybird.be/images/blog/posts/easyblog/1a.jpg)
+![](https://storage.googleapis.com/easybird-blog-images/blogging-with-tumblr-example.jpg)
 
 ## Website integration
 

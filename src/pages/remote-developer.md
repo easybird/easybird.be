@@ -2,7 +2,7 @@
 title: "Making dreams come true"
 subTitle: "Working as a remote developer"
 date: "2016-05-03T22:12:03.284Z"
-hero: "http://s32.postimg.org/kbeqqds11/remote_worker.jpg"
+hero: "https://storage.googleapis.com/easybird-blog-images/working-remote.jpg"
 ---
 
 ## What I did
