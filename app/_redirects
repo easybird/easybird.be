@@ -1,2 +1,5 @@
 /en/blog /blog
+/en/blog/* /blog/*
+
 /nl/blog /blog
+/nl/blog/* /blog/*
