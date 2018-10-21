@@ -1,9 +1,8 @@
-node_modules/
-public
-.gatsby-context.js
-.DS_Store
-.intermediate-representation/
-.cache/
-yarn.lock
+node_modules
+
+# Intellij - WebStorm
+.idea/
+*.iml
+*.iws
 
 app/blog

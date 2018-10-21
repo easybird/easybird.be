@@ -1,9 +1,11 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# Website of Easybird.be
+The main website of easybird.be
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+## Technologies used
+Css template: materialize css
 
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+## Contributors
+This website is based on a Materialize paralax template: http://materializecss.com/templates/parallax-template/preview.html
 
-## Running in development
-`gatsby develop`
+## License
+Easybird.be

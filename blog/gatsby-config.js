@@ -5,7 +5,7 @@ module.exports = {
     description: 'A blog for software devs and mind wanderers',
     siteUrl: 'https://easybird.be/blog/',
   },
-  pathPrefix: '/',
+  pathPrefix: '/blog',
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
