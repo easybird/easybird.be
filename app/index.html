@@ -9,9 +9,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+    <!-- NETLIFY IDENTITY - include the widget -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- NETLIFY IDENTITY -->
 </head>
 <body>
+<!-- NETLIFY IDENTITY
+   Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+-->
+<div data-netlify-identity-menu></div>
+<!-- NETLIFY IDENTITY -->
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">
@@ -221,7 +230,7 @@
     ga('create', 'UA-58109113-1');
     ga('send', 'pageview');
 </script>
-<!-- ADDED FOR NETLIFY CSM -->
+<!-- ADDED FOR NETLIFY CMS -->
 <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -233,6 +242,6 @@
       });
     }
 </script>
-<!-- ADDED FOR NETLIFY CSM -->
+<!-- ADDED FOR NETLIFY CMS -->
 </body>
 </html>
