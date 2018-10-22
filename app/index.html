@@ -9,7 +9,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+    <!-- NETLIFY IDENTITY - include the widget -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- NETLIFY IDENTITY -->
 </head>
 <body>
 <nav class="white" role="navigation">
@@ -221,5 +223,18 @@
     ga('create', 'UA-58109113-1');
     ga('send', 'pageview');
 </script>
+<!-- ADDED FOR NETLIFY CMS -->
+<script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+</script>
+<!-- ADDED FOR NETLIFY CMS -->
 </body>
 </html>
