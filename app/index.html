@@ -221,5 +221,18 @@
     ga('create', 'UA-58109113-1');
     ga('send', 'pageview');
 </script>
+<!-- ADDED FOR NETLIFY CSM -->
+<script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+</script>
+<!-- ADDED FOR NETLIFY CSM -->
 </body>
 </html>
