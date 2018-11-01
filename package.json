@@ -5,7 +5,7 @@
   "main": "app/index.html",
   "scripts": {
     "postinstall": "cd blog && npm i",
-    "build:blog": "cd blog && npm run build -- --prefix-paths && cd .. && rm -rf app/blog && cp -R blog/public app/blog",
+    "build:blog": "cd blog && npm i && npm run build -- --prefix-paths && cd .. && rm -rf app/blog && cp -R blog/public app/blog",
     "clean:install": "cd blog && rm -rf node_modules && rm -rf .cache && npm cache verify && cd .. && npm cache verify && npm i",
     "deploy:dev": "npm run build:blog && surge -p app -d http://impolite-size.surge.sh"
   },
