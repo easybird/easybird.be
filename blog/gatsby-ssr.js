@@ -1,8 +1,7 @@
 import React from 'react';
 
 export const onRenderBody = (
-  {setHeadComponents, setHtmlAttributes, setBodyAttributes},
-  pluginOptions
+  {setHeadComponents}
 ) => {
   // head scripts for google adsense
   if (process.env.NODE_ENV === 'production') {
